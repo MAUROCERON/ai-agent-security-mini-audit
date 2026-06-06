@@ -686,6 +686,16 @@ th {
     overflow-wrap: anywhere;
   }
 
+  .tool-shell {
+    width: min(320px, calc(100vw - 48px));
+    max-width: 320px;
+  }
+
+  .tool-shell .lede,
+  .check-item small {
+    overflow-wrap: anywhere;
+  }
+
   .result-panel {
     position: static;
   }
