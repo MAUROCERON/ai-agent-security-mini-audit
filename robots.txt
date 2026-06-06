@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mauroceron.github.io/ai-agent-security-mini-audit/sitemap.xml
