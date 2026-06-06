@@ -36,6 +36,10 @@ a {
   font: inherit;
 }
 
+a {
+  color: inherit;
+}
+
 .page-shell {
   width: min(1120px, calc(100% - 32px));
   margin: 0 auto;
@@ -96,16 +100,44 @@ h2 {
 .lede {
   max-width: 690px;
   margin: 26px 0 0;
+  color: rgba(22, 22, 22, 0.74);
   font-size: clamp(1.1rem, 2.1vw, 1.45rem);
   line-height: 1.45;
-  color: rgba(22, 22, 22, 0.74);
 }
 
+.hero-actions,
 .signal-row {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 32px;
+  gap: 10px;
+}
+
+.hero-actions {
+  margin-top: 28px;
+}
+
+.signal-row {
+  margin-top: 18px;
+}
+
+.hero-actions a,
+.solid-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border: 2px solid var(--ink);
+  background: var(--ink);
+  color: var(--paper);
+  padding: 10px 14px;
+  font-family: Bahnschrift, Candara, sans-serif;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.hero-actions a:nth-child(2) {
+  background: transparent;
+  color: var(--ink);
 }
 
 .signal-row span {
@@ -192,10 +224,44 @@ h2 {
 }
 
 .offer button:hover,
-.offer button:focus-visible {
+.offer button:focus-visible,
+.solid-link:hover,
+.solid-link:focus-visible,
+.hero-actions a:hover,
+.hero-actions a:focus-visible {
   background: var(--teal);
   color: white;
   outline: none;
+}
+
+.trust-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 28px;
+  border: 2px solid var(--ink);
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.trust-strip div {
+  display: grid;
+  gap: 8px;
+  padding: 18px;
+  border-right: 1px solid var(--line);
+}
+
+.trust-strip div:last-child {
+  border-right: 0;
+}
+
+.trust-strip strong {
+  font-family: Bahnschrift, Candara, sans-serif;
+  font-size: 0.88rem;
+  text-transform: uppercase;
+}
+
+.trust-strip span {
+  color: rgba(22, 22, 22, 0.72);
+  line-height: 1.45;
 }
 
 .proof-band {
@@ -215,11 +281,24 @@ h2 {
 }
 
 .proof-band p,
-.thanks-panel p {
+.thanks-panel p,
+.sample-band p {
   margin: 14px 0 0;
   color: rgba(22, 22, 22, 0.74);
   font-size: 1rem;
   line-height: 1.55;
+}
+
+.sample-band {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: center;
+  padding: 28px 0 0;
+}
+
+.sample-band p {
+  max-width: 620px;
 }
 
 .thanks-panel {
@@ -237,6 +316,66 @@ h2 {
   font-weight: 800;
 }
 
+.document-shell {
+  width: min(920px, calc(100% - 32px));
+}
+
+.doc-panel {
+  padding: 36px;
+  border: 2px solid var(--ink);
+  background: rgba(245, 239, 227, 0.92);
+  box-shadow: var(--shadow);
+}
+
+.doc-panel section {
+  margin-top: 30px;
+}
+
+.doc-panel p,
+.doc-panel li {
+  color: rgba(22, 22, 22, 0.76);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.doc-panel ol,
+.plain-list {
+  padding-left: 22px;
+}
+
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+  background: rgba(255, 255, 255, 0.24);
+}
+
+th,
+td {
+  border: 1px solid var(--line);
+  padding: 12px;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-family: Bahnschrift, Candara, sans-serif;
+  text-transform: uppercase;
+}
+
+.doc-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  margin-top: 32px;
+}
+
 @media (max-width: 820px) {
   .page-shell {
     width: calc(100vw - 56px);
@@ -252,15 +391,15 @@ h2 {
   }
 
   h1 {
+    max-width: 100%;
     font-size: clamp(2.4rem, 12vw, 3.05rem);
     line-height: 0.94;
-    max-width: 100%;
     overflow-wrap: break-word;
   }
 
   .lede {
-    font-size: 1.02rem;
     max-width: 100%;
+    font-size: 1.02rem;
     overflow-wrap: break-word;
   }
 
@@ -269,40 +408,53 @@ h2 {
   }
 
   .product-figure {
-    transform: none;
-    min-width: 0;
     width: 100%;
+    min-width: 0;
+    transform: none;
   }
 
   .product-figure img {
     width: 100%;
-    min-height: 260px;
     max-width: 100%;
+    min-height: 260px;
     object-fit: contain;
   }
 
+  .hero-actions a,
+  .solid-link,
   .signal-row span {
-    flex: 1 1 100%;
+    width: 100%;
     text-align: center;
   }
 
   .offer-grid,
-  .proof-band {
+  .proof-band,
+  .trust-strip {
     grid-template-columns: 1fr;
     min-width: 0;
   }
 
   .offer {
-    min-height: 0;
     min-width: 0;
+    min-height: 0;
   }
 
-  .proof-band div {
+  .proof-band div,
+  .trust-strip div {
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 
-  .proof-band div:last-child {
+  .proof-band div:last-child,
+  .trust-strip div:last-child {
     border-bottom: 0;
+  }
+
+  .sample-band {
+    display: grid;
+  }
+
+  .doc-panel {
+    padding: 22px;
   }
 }
