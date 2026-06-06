@@ -612,6 +612,65 @@ th {
   line-height: 1.55;
 }
 
+.next-action {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 18px;
+  padding: 16px 0;
+  border-top: 2px solid var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.next-action .offer-label {
+  margin-bottom: 0;
+}
+
+.next-action strong {
+  font-family: Bahnschrift, Candara, sans-serif;
+  font-size: 1.05rem;
+  text-transform: uppercase;
+}
+
+.next-action p {
+  margin: 0;
+}
+
+.next-action ul {
+  display: grid;
+  gap: 8px;
+  margin: 2px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.next-action li {
+  padding-left: 18px;
+  color: rgba(22, 22, 22, 0.74);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  position: relative;
+}
+
+.next-action li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.62em;
+  width: 8px;
+  height: 8px;
+  background: var(--teal);
+}
+
+.next-action[data-fit="critical"],
+.next-action[data-fit="high"] {
+  border-top-color: var(--clay);
+}
+
+.next-action[data-fit="critical"] li::before,
+.next-action[data-fit="high"] li::before {
+  background: var(--clay);
+}
+
 .priority-list {
   display: grid;
   gap: 10px;
@@ -651,6 +710,16 @@ th {
 .result-panel form button {
   background: var(--acid);
   color: var(--ink);
+}
+
+.result-panel form[data-fit="low"] button {
+  background: transparent;
+}
+
+.result-panel form[data-fit="critical"] button,
+.result-panel form[data-fit="high"] button {
+  background: var(--acid);
+  box-shadow: 5px 5px 0 var(--ink);
 }
 
 .paid-fit-note {
