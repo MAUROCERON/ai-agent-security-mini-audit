@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Free Contact Funnel Risk Self-Check</title>
+    <meta
+      name="description"
+      content="A free no-login self-check for AI agency contact forms, webhooks, lead routing and visible success states before paid traffic or client handoff."
+    >
+    <meta property="og:title" content="Free Contact Funnel Risk Self-Check">
+    <meta property="og:description" content="Score whether a public contact form or intake funnel may be losing leads before you buy a USD 75 QA check.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-self-check.html">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-self-check.html">
+    <link rel="stylesheet" href="styles.css?v=12">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Contact Funnel Risk Self-Check",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Any",
+        "url": "https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-self-check.html",
+        "description": "A free no-login risk self-check for public contact forms, webhooks and lead handoff funnels.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <main class="page-shell tool-shell">
+      <nav class="top-nav" aria-label="Page links">
+        <a href="index.html">Main offer</a>
+        <a href="contact-funnel-qa.html">Buy funnel QA</a>
+        <a href="contact-funnel-sample-report.html">Sample report</a>
+        <a href="agency-bundle.html">Agency bundle</a>
+      </nav>
+
+      <section class="tool-hero" aria-labelledby="funnel-check-title">
+        <p class="kicker">Free diagnostic for lead capture</p>
+        <h1 id="funnel-check-title">
+          <span>Contact Funnel</span>
+          <span>Risk Check</span>
+        </h1>
+        <p class="lede">
+          Score one public contact, demo, audit or intake form before paid
+          traffic, cold outreach or client handoff depends on it.
+        </p>
+      </section>
+
+      <section class="check-layout" aria-label="Contact funnel self-check">
+        <form class="check-panel" id="funnelForm">
+          <div class="check-heading">
+            <h2>Lost-lead signals</h2>
+            <span>10 checks</span>
+          </div>
+
+          <label class="check-item">
+            <input type="checkbox" data-weight="3" data-label="The success message appears before you have confirmed a real backend 2xx response.">
+            <span>
+              <strong>Success before backend proof</strong>
+              <small>The page can show success before you know the form endpoint actually accepted the lead.</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" data-weight="3" data-label="You have not submitted a test lead and confirmed it arrived in email, CRM, Slack, Sheet, Airtable, Notion or webhook logs.">
+            <span>
+              <strong>No end-to-end test</strong>
+              <small>No recent test lead has been confirmed at the final destination.</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" data-weight="3" data-label="The funnel pushes through n8n, Make, Zapier, Web3Forms, Formspree, WPForms, Netlify Forms or a custom API.">
+            <span>
+              <strong>Webhook or form vendor in path</strong>
+              <small>The lead path depends on a third-party form service, automation webhook or custom API.</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" data-weight="2" data-label="Analytics or tracking events fire, but you are not sure there is a separate lead-delivery request.">
+            <span>
+              <strong>Analytics looks like delivery</strong>
+              <small>Trackers may be mistaken for proof that the lead was delivered.</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" data-weight="2" data-label="The site was recently rebuilt, moved domains, changed hosting, changed form vendors or added spam protection.">
+            <span>
+              <strong>Recent site or form change</strong>
+              <small>Domain, hosting, framework, vendor or spam-protection changes can break delivery silently.</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" data-weight="2" data-label="Phone, budget, industry or service fields may block valid agency, partnership or high-intent messages.">
+            <span>
+              <strong>Fields may block valid leads</strong>
+              <small>Required fields can reject good leads or push them into the wrong path.</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" data-weight="2" data-label="There is no alert when the contact endpoint returns 403, 404, 500 or a form vendor rejects the payload.">
+            <span>
+              <strong>No failed-submit alert</strong>
+              <small>Endpoint failures can happen without anyone on the team seeing them.</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" data-weight="2" data-label="A client handoff, campaign, launch, SEO push or cold outreach sequence will send people into this form soon.">
+            <span>
+              <strong>Traffic or handoff soon</strong>
+              <small>People will be sent into the form before the delivery path has fresh proof.</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" data-weight="1" data-label="The page has no visible error state that tells users to retry or email directly when submission fails.">
+            <span>
+              <strong>No user-facing fallback</strong>
+              <small>If submission fails, the visitor may get no useful retry or alternate contact path.</small>
+            </span>
+          </label>
+
+          <label class="check-item">
+            <input type="checkbox" data-weight="1" data-label="There is no simple monthly retest record for the form after edits, plugin updates or automation changes.">
+            <span>
+              <strong>No retest habit</strong>
+              <small>The form is not rechecked after common changes that can break delivery.</small>
+            </span>
+          </label>
+        </form>
+
+        <aside class="result-panel" aria-live="polite">
+          <p class="offer-label">Current score</p>
+          <div class="score-row">
+            <strong id="funnelScore">0</strong>
+            <span>/ 21</span>
+          </div>
+          <div class="meter" aria-hidden="true">
+            <span id="funnelMeter"></span>
+          </div>
+          <h2 id="funnelLevel">Low visible risk</h2>
+          <p id="funnelSummary">
+            No lost-lead signals selected yet. Keep a lightweight monthly test
+            and confirm the lead lands where the team expects it.
+          </p>
+          <div class="next-action" id="nextAction">
+            <p class="offer-label">Best next action</p>
+            <strong id="actionTitle">Use this as a retest checklist</strong>
+            <p id="actionCopy">
+              Do not buy the paid QA for a low-risk form. Send one internal
+              test lead and save the destination proof first.
+            </p>
+            <ul id="valueChecks" aria-label="What makes the paid check pay for itself">
+              <li>The form is tied to real inbound leads, campaigns or client delivery.</li>
+              <li>One missed lead would cost more than USD 75.</li>
+            </ul>
+          </div>
+          <div class="priority-list" id="priorityList" aria-label="Top priorities"></div>
+          <button class="copy-button" type="button" id="copyBrief">Copy funnel risk brief</button>
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="checkoutForm">
+            <input type="hidden" name="cmd" value="_xclick">
+            <input type="hidden" name="business" value="mauro_ceron1@hotmail.com">
+            <input type="hidden" name="item_name" value="AI Agency Contact Funnel QA">
+            <input type="hidden" name="item_number" value="AA-CONTACT-FUNNEL-QA-75">
+            <input type="hidden" name="amount" value="75.00">
+            <input type="hidden" name="currency_code" value="USD">
+            <input type="hidden" name="no_shipping" value="1">
+            <input type="hidden" name="custom" value="contact-funnel-self-check-score-0" id="paypalCustom">
+            <input type="hidden" name="return" value="https://mauroceron.github.io/ai-agent-security-mini-audit/thank-you.html">
+            <button type="submit" id="checkoutButton" aria-describedby="paidFitNote actionCopy">Buy only if a lead can be lost</button>
+          </form>
+          <p class="paid-fit-note" id="paidFitNote">
+            Paid QA is usually worth it only when the form receives real leads,
+            supports a client handoff or sits behind paid/outbound traffic.
+          </p>
+          <a class="text-link" href="contact-funnel-sample-report.html">View sample deliverable</a>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const inputs = Array.from(document.querySelectorAll("#funnelForm input[type='checkbox']"));
+      const scoreEl = document.getElementById("funnelScore");
+      const meterEl = document.getElementById("funnelMeter");
+      const levelEl = document.getElementById("funnelLevel");
+      const summaryEl = document.getElementById("funnelSummary");
+      const priorityEl = document.getElementById("priorityList");
+      const copyButton = document.getElementById("copyBrief");
+      const paidFitEl = document.getElementById("paidFitNote");
+      const nextActionEl = document.getElementById("nextAction");
+      const actionTitleEl = document.getElementById("actionTitle");
+      const actionCopyEl = document.getElementById("actionCopy");
+      const valueChecksEl = document.getElementById("valueChecks");
+      const checkoutForm = document.getElementById("checkoutForm");
+      const checkoutButton = document.getElementById("checkoutButton");
+      const paypalCustom = document.getElementById("paypalCustom");
+
+      function getState() {
+        const selected = inputs
+          .filter((input) => input.checked)
+          .map((input) => ({
+            weight: Number(input.dataset.weight),
+            label: input.dataset.label
+          }))
+          .sort((a, b) => b.weight - a.weight);
+
+        return {
+          score: selected.reduce((total, item) => total + item.weight, 0),
+          selected
+        };
+      }
+
+      function render() {
+        const { score, selected } = getState();
+        const pct = Math.min(100, Math.round((score / 21) * 100));
+        scoreEl.textContent = score;
+        meterEl.style.width = `${pct}%`;
+
+        let level = "Low visible risk";
+        let summary = "No lost-lead signals selected yet. Keep a lightweight monthly test and confirm the lead lands where the team expects it.";
+        let paidFit = "Paid QA is usually worth it only when the form receives real leads, supports a client handoff or sits behind paid/outbound traffic.";
+        let actionTitle = "Use this as a retest checklist";
+        let actionCopy = "Do not buy the paid QA for a low-risk form. Send one internal test lead and save the destination proof first.";
+        let checkoutLabel = "Buy only if a lead can be lost";
+        let fit = "low";
+        let valueChecks = [
+          "The form is tied to real inbound leads, campaigns or client delivery.",
+          "One missed lead would cost more than USD 75."
+        ];
+
+        if (score >= 15) {
+          level = "Critical lost-lead risk";
+          summary = "This funnel should be checked before traffic or client handoff. The score suggests a real chance of silent lost leads.";
+          paidFit = "The USD 75 QA is strongly justified if this form receives leads or is part of a client delivery.";
+          actionTitle = "Test the funnel before more traffic";
+          actionCopy = "The paid QA should pay for itself if it prevents one lost inbound lead or gives your team proof before handoff.";
+          checkoutLabel = "Get the USD 75 funnel QA";
+          fit = "critical";
+          valueChecks = [
+            "You need endpoint, response-code and visible-state evidence.",
+            "You need first fix and retest steps before traffic or handoff."
+          ];
+        } else if (score >= 9) {
+          level = "High lost-lead risk";
+          summary = "Several delivery assumptions need proof. The form may look fine while the lead path fails downstream.";
+          paidFit = "Paid QA is likely worth it if the funnel receives real leads, campaign traffic or client handoff traffic.";
+          actionTitle = "Buy if this funnel matters this week";
+          actionCopy = "This is a strong paid fit when a live lead path depends on vendors, webhooks, CRM routing or custom API behavior.";
+          checkoutLabel = "Get the USD 75 QA check";
+          fit = "high";
+          valueChecks = [
+            "The form feeds email, CRM, Slack, Sheets, Airtable, Notion or a webhook.",
+            "A campaign, launch or client delivery depends on the form."
+          ];
+        } else if (score >= 5) {
+          level = "Medium risk";
+          summary = "There are enough signals to justify a manual test and screenshot of the final lead destination.";
+          paidFit = "Paid QA may be worth it if the form is close to launch or has recently changed.";
+          actionTitle = "Retest internally first";
+          actionCopy = "Buy only if the internal test is inconclusive, the funnel recently changed or a client needs proof.";
+          checkoutLabel = "Buy if internal proof is missing";
+          fit = "medium";
+          valueChecks = [
+            "You cannot prove the lead reaches its final destination.",
+            "The form changed recently or will receive traffic soon."
+          ];
+        }
+
+        levelEl.textContent = level;
+        summaryEl.textContent = summary;
+        paidFitEl.textContent = paidFit;
+        actionTitleEl.textContent = actionTitle;
+        actionCopyEl.textContent = actionCopy;
+        checkoutButton.textContent = checkoutLabel;
+        checkoutForm.dataset.fit = fit;
+        nextActionEl.dataset.fit = fit;
+        paypalCustom.value = `contact-funnel-self-check-score-${score}-${level.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
+
+        priorityEl.innerHTML = "";
+        valueChecksEl.innerHTML = "";
+
+        valueChecks.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          valueChecksEl.appendChild(li);
+        });
+
+        selected.slice(0, 3).forEach((item, index) => {
+          const row = document.createElement("p");
+          row.textContent = `${index + 1}. ${item.label}`;
+          priorityEl.appendChild(row);
+        });
+      }
+
+      copyButton.addEventListener("click", async () => {
+        const { score, selected } = getState();
+        const lines = [
+          `Contact Funnel Risk Self-Check score: ${score}/21`,
+          `Level: ${levelEl.textContent}`,
+          `Recommendation: ${actionTitleEl.textContent}`,
+          `Why: ${actionCopyEl.textContent}`,
+          "Selected signals:",
+          ...(selected.length ? selected.map((item) => `- ${item.label}`) : ["- None selected"]),
+          "",
+          "Sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-sample-report.html",
+          "Paid QA: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-qa.html"
+        ];
+
+        try {
+          await navigator.clipboard.writeText(lines.join("\n"));
+          copyButton.textContent = "Brief copied";
+        } catch (error) {
+          copyButton.textContent = "Copy unavailable";
+        }
+
+        window.setTimeout(() => {
+          copyButton.textContent = "Copy funnel risk brief";
+        }, 1800);
+      });
+
+      inputs.forEach((input) => input.addEventListener("change", render));
+      render();
+    </script>
+  </body>
+</html>
