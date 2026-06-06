@@ -235,23 +235,29 @@ h2 {
 
 @media (max-width: 820px) {
   .page-shell {
-    width: min(100% - 28px, 420px);
+    width: calc(100% - 32px);
+    max-width: 420px;
+    overflow: hidden;
   }
 
   .hero {
     min-height: auto;
     grid-template-columns: 1fr;
     gap: 8px;
+    min-width: 0;
   }
 
   h1 {
-    font-size: clamp(2.65rem, 14vw, 3.35rem);
+    font-size: clamp(2.4rem, 12vw, 3.05rem);
     line-height: 0.94;
     max-width: 100%;
+    overflow-wrap: break-word;
   }
 
   .lede {
     font-size: 1.02rem;
+    max-width: 100%;
+    overflow-wrap: break-word;
   }
 
   .hero-copy {
@@ -260,11 +266,15 @@ h2 {
 
   .product-figure {
     transform: none;
+    min-width: 0;
+    width: 100%;
   }
 
   .product-figure img {
+    width: 100%;
     min-height: 260px;
     max-width: 100%;
+    object-fit: contain;
   }
 
   .signal-row span {
@@ -275,10 +285,12 @@ h2 {
   .offer-grid,
   .proof-band {
     grid-template-columns: 1fr;
+    min-width: 0;
   }
 
   .offer {
     min-height: 0;
+    min-width: 0;
   }
 
   .proof-band div {
