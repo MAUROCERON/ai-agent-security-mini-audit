@@ -31,6 +31,16 @@
         </section>
 
         <section>
+          <h2>Launch decision</h2>
+          <p>
+            Verdict: ship after fixes. This workflow is reasonable for a limited
+            pilot after A1 and A2 are fixed. Do not enable it for all support
+            queues while it still uses a full human CRM session and accepts
+            instructions from ticket text.
+          </p>
+        </section>
+
+        <section>
           <h2>Top findings</h2>
           <div class="table-wrap">
             <table>
@@ -79,14 +89,24 @@
         </section>
 
         <section>
-          <h2>Recommended next steps</h2>
+          <h2>Priority fix plan</h2>
           <ol>
-            <li>Create a dedicated CRM role with read-ticket and draft-reply permissions only.</li>
-            <li>Add approval before sending, exporting or changing customer records.</li>
-            <li>Isolate the browser profile and clear storage between tasks.</li>
-            <li>Add prompt-injection regression tests for ticket, email and web content.</li>
-            <li>Redact PII from logs and set a retention window.</li>
+            <li>Before pilot: create a dedicated CRM role with read-ticket and draft-reply permissions only.</li>
+            <li>Before pilot: add approval before sending, exporting or changing customer records.</li>
+            <li>Before wider launch: isolate the browser profile and clear storage between tasks.</li>
+            <li>Before wider launch: add prompt-injection regression tests for ticket, email and web content.</li>
+            <li>Before customer security review: redact PII from logs and set a retention window.</li>
           </ol>
+        </section>
+
+        <section>
+          <h2>Reusable security note</h2>
+          <p>
+            This workflow was reviewed for prompt-injection boundaries, CRM tool
+            permissions, approval gates, browser/session isolation and log data
+            handling. The pilot should remain limited until least-privilege CRM
+            access and human approval are enforced.
+          </p>
         </section>
 
         <div class="doc-actions">
