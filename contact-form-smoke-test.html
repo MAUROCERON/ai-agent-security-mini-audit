@@ -624,7 +624,7 @@
           <div class="actions">
             <button type="button" id="copyReport">Copy report</button>
             <button type="reset" class="secondary">Reset</button>
-            <a class="link-button" href="contact-funnel-qa.html">Buy QA - USD 75</a>
+            <a class="link-button" href="contact-form-proof.html">Buy proof - USD 29</a>
             <a class="link-button secondary" href="contact-funnel-self-check.html">Full worksheet</a>
           </div>
           <p class="toast" id="toast" aria-live="polite"></p>
@@ -650,12 +650,13 @@
               keep this as an internal launch checklist.
             </p>
             <div class="cta-stack">
-              <a class="link-button" id="paidNextPrimary" href="contact-funnel-qa.html">Buy Contact Funnel QA - USD 75</a>
+              <a class="link-button" id="paidNextPrimary" href="contact-form-proof.html">Buy Proof Check - USD 29</a>
               <a class="link-button secondary" id="paidNextSecondary" href="broken-form-rescue.html">Broken Lead Form Rescue - USD 100</a>
-              <a class="link-button secondary" href="contact-funnel-sample-report.html">See sample QA report</a>
+              <a class="link-button secondary" href="contact-funnel-qa.html">Full QA - USD 75</a>
+              <a class="link-button secondary" href="contact-form-proof-sample.html">See USD 29 sample</a>
             </div>
             <p class="mini">
-              Pay only when one recovered lead, handoff, or failed-form fix is worth more than the fee.
+              Start at USD 29 when you need proof; use USD 75-100 only when the risk or urgency is larger.
             </p>
           </div>
           <div class="notes" style="margin-top:18px">
@@ -728,7 +729,7 @@
         const hasDeliveryRisk = missingLabels.some((label) => /backend|2xx|inbox|CRM|reply path/i.test(label));
         const hasBlockingRisk = missingLabels.some((label) => /fake data|Spam protection|Mobile layout/i.test(label));
 
-        if (score < 20 && exposure < 75) {
+        if (score < 20 && exposure < 29) {
           return {
             badge: "Decision rule",
             title: "Do not buy yet",
@@ -741,28 +742,28 @@
           };
         }
 
-        if (hasDeliveryRisk || score >= 50 || exposure >= 100) {
+        if (hasBlockingRisk && hasDeliveryRisk && exposure >= 1500) {
           return {
-            badge: "Worth paying if",
-            title: "Buy the USD 75 QA when a lead is worth more than the fee",
-            text: `The current inputs show ${money(exposure)} in weighted monthly exposure. A paid QA pass is rational if it can recover one lead, prove endpoint delivery, or prevent a failed campaign handoff.`,
-            primaryHref: "contact-funnel-qa.html",
-            primaryLabel: "Buy Contact Funnel QA - USD 75",
+            badge: "Higher-risk funnel",
+            title: "Start with USD 29, then upgrade only if proof shows failure",
+            text: `The current inputs show ${money(exposure)} in weighted monthly exposure. The proof check is still the easiest first purchase; use the USD 75 QA or USD 100 rescue only if the first pass finds a real failure or campaign risk.`,
+            primaryHref: "contact-form-proof.html",
+            primaryLabel: "Buy Proof Check - USD 29",
             secondaryHref: hasBlockingRisk ? "broken-form-rescue.html" : "broken-form-rescue-sample-report.html",
             secondaryLabel: hasBlockingRisk ? "Fix a broken form - USD 100" : "See rescue sample report",
-            report: "Paid next step: Contact Funnel QA at USD 75 is rational if one recovered or protected lead is worth more than USD 75."
+            report: "Paid next step: start with the USD 29 proof check; upgrade to USD 75-100 only if the proof check finds failure or the funnel has clear campaign/client risk."
           };
         }
 
         return {
-          badge: "Maybe pay after proof",
-          title: "Use the free proof first",
-          text: `The estimate is ${money(exposure)}. If the next real submission does not produce endpoint proof and inbox/CRM delivery proof, move to the USD 75 QA.`,
-          primaryHref: "contact-funnel-self-check.html",
-          primaryLabel: "Use full worksheet",
+          badge: "Best first paid step",
+          title: "Buy the USD 29 proof check if you want outside evidence",
+          text: `The estimate is ${money(exposure)}. The lower-priced proof check is the better first purchase: it verifies one public form and only recommends the USD 75 QA if the risk justifies it.`,
+          primaryHref: "contact-form-proof.html",
+          primaryLabel: "Buy Proof Check - USD 29",
           secondaryHref: "contact-funnel-qa.html",
-          secondaryLabel: "Buy QA if proof fails - USD 75",
-          report: "Paid next step: use the full worksheet first; buy the USD 75 QA only if endpoint or delivery proof fails."
+          secondaryLabel: "Full QA only if needed - USD 75",
+          report: "Paid next step: Contact Form Proof Check at USD 29 is the lower-friction first purchase; upgrade only if proof fails or the funnel has meaningful lead value."
         };
       }
 
@@ -813,6 +814,8 @@
           recommendation.report,
           "",
           "Paid links:",
+          "Contact Form Proof Check - USD 29: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-proof.html",
+          "Sample proof note: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-proof-sample.html",
           "Contact Funnel QA - USD 75: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-qa.html",
           "Broken Lead Form Rescue - USD 100: https://mauroceron.github.io/ai-agent-security-mini-audit/broken-form-rescue.html",
           "",
