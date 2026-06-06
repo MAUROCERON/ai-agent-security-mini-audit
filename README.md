@@ -20,6 +20,10 @@ The self-check runs in the browser and lets a visitor:
 
 No workflow details are submitted by the self-check. The paid mini-audit button is optional.
 
+## License
+
+The static self-check and landing-page source in this repository are available under the MIT License.
+
 ## Files
 
 - `index.html`: offer and PayPal buttons.
