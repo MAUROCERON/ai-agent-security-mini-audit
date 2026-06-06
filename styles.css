@@ -376,6 +376,226 @@ th {
   margin-top: 32px;
 }
 
+.top-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.top-nav a {
+  min-height: 40px;
+  border: 1px solid var(--ink);
+  background: rgba(255, 255, 255, 0.32);
+  padding: 10px 12px;
+  font-family: Bahnschrift, Candara, sans-serif;
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.top-nav a:hover,
+.top-nav a:focus-visible {
+  background: var(--ink);
+  color: var(--paper);
+  outline: none;
+}
+
+.tool-shell {
+  padding-top: 24px;
+}
+
+.tool-hero {
+  max-width: 900px;
+  padding: 18px 0 34px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.tool-hero h1 {
+  font-size: clamp(3rem, 7vw, 6.6rem);
+}
+
+.check-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.62fr);
+  gap: 20px;
+  align-items: start;
+  padding-top: 26px;
+}
+
+.check-panel,
+.result-panel {
+  border: 2px solid var(--ink);
+  background: rgba(245, 239, 227, 0.92);
+  box-shadow: var(--shadow);
+}
+
+.check-panel {
+  display: grid;
+}
+
+.check-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  padding: 22px;
+  border-bottom: 2px solid var(--ink);
+  background: var(--coal);
+  color: var(--paper);
+}
+
+.check-heading span {
+  font-family: Bahnschrift, Candara, sans-serif;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.check-item {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 14px;
+  align-items: start;
+  min-height: 82px;
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+}
+
+.check-item:last-child {
+  border-bottom: 0;
+}
+
+.check-item:hover,
+.check-item:has(input:focus-visible) {
+  background: rgba(199, 239, 79, 0.16);
+}
+
+.check-item input {
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  accent-color: var(--teal);
+}
+
+.check-item strong,
+.check-item small {
+  display: block;
+}
+
+.check-item strong {
+  font-family: Bahnschrift, Candara, sans-serif;
+  font-size: 0.94rem;
+  text-transform: uppercase;
+}
+
+.check-item small {
+  margin-top: 6px;
+  color: rgba(22, 22, 22, 0.72);
+  font-size: 0.96rem;
+  line-height: 1.45;
+}
+
+.result-panel {
+  position: sticky;
+  top: 18px;
+  padding: 24px;
+}
+
+.score-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin: 10px 0 12px;
+}
+
+.score-row strong {
+  font-family: Constantia, Georgia, serif;
+  font-size: clamp(4rem, 8vw, 6rem);
+  line-height: 0.82;
+}
+
+.score-row span {
+  color: rgba(22, 22, 22, 0.62);
+  font-family: Bahnschrift, Candara, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+}
+
+.meter {
+  height: 14px;
+  border: 2px solid var(--ink);
+  background: rgba(255, 255, 255, 0.36);
+  overflow: hidden;
+}
+
+.meter span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--acid), var(--clay));
+  transition: width 180ms ease;
+}
+
+.result-panel h2 {
+  margin-top: 24px;
+}
+
+.result-panel p {
+  color: rgba(22, 22, 22, 0.74);
+  line-height: 1.55;
+}
+
+.priority-list {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.priority-list:empty {
+  display: none;
+}
+
+.priority-list p {
+  margin: 0;
+  border-left: 4px solid var(--clay);
+  background: rgba(255, 255, 255, 0.34);
+  padding: 10px 12px;
+}
+
+.copy-button,
+.result-panel form button {
+  width: 100%;
+  min-height: 50px;
+  border: 2px solid var(--ink);
+  cursor: pointer;
+  font-family: Bahnschrift, Candara, sans-serif;
+  font-weight: 800;
+}
+
+.copy-button {
+  background: transparent;
+  color: var(--ink);
+}
+
+.result-panel form {
+  margin-top: 12px;
+}
+
+.result-panel form button {
+  background: var(--acid);
+  color: var(--ink);
+}
+
+.copy-button:hover,
+.copy-button:focus-visible,
+.result-panel form button:hover,
+.result-panel form button:focus-visible {
+  background: var(--teal);
+  color: white;
+  outline: none;
+}
+
 @media (max-width: 820px) {
   .page-shell {
     width: calc(100vw - 56px);
@@ -422,14 +642,16 @@ th {
 
   .hero-actions a,
   .solid-link,
-  .signal-row span {
+  .signal-row span,
+  .top-nav a {
     width: 100%;
     text-align: center;
   }
 
   .offer-grid,
   .proof-band,
-  .trust-strip {
+  .trust-strip,
+  .check-layout {
     grid-template-columns: 1fr;
     min-width: 0;
   }
@@ -456,5 +678,20 @@ th {
 
   .doc-panel {
     padding: 22px;
+  }
+
+  .tool-hero h1 {
+    font-size: clamp(2.35rem, 11vw, 3rem);
+    line-height: 0.95;
+  }
+
+  .result-panel {
+    position: static;
+  }
+
+  .check-heading,
+  .check-item,
+  .result-panel {
+    padding: 18px;
   }
 }
