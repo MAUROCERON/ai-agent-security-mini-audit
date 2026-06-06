@@ -15,6 +15,8 @@ GitHub repository: https://github.com/MAUROCERON/ai-agent-security-mini-audit
 - Agency handoff QA: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-handoff-qa.html
 - USD 100 agency bundle: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-bundle.html
 - Contact funnel risk self-check: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-self-check.html
+- USD 29 contact form proof check: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-proof.html
+- Sample USD 29 proof note: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-proof-sample.html
 - USD 75 contact funnel QA: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-qa.html
 - Contact funnel sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-sample-report.html
 - USD 100 broken lead form rescue: https://mauroceron.github.io/ai-agent-security-mini-audit/broken-form-rescue.html
@@ -37,6 +39,10 @@ Voice/chat agent QA is the same fixed-scope review positioned for customer-facin
 The USD 100 agency bundle is for teams with two redacted client workflows or one workflow plus an expanded first-fix retest pass. It gives each workflow a launch verdict, first fix, retest criteria and a reusable client-safe note.
 
 The USD 75 contact funnel QA checks whether one public contact/intake funnel actually delivers leads through Formspree, Web3Forms, WPForms, Netlify Forms, a custom API, CRM routing or automation webhook. It reports backend response, visible page state, lost-lead risk, first fix and retest steps.
+
+The USD 29 contact form proof check is the lower-friction first paid step. It checks one public contact, demo, audit, callback or intake form and returns endpoint evidence, visible state, a short verdict and a next-step recommendation. It exists so buyers can start cheaply and upgrade only when the proof check shows meaningful risk.
+
+The contact form proof sample shows the expected USD 29 deliverable shape: verdict, evidence table, client-safe note and upgrade recommendation.
 
 The free contact funnel risk self-check scores whether a public form has enough lost-lead risk to justify the USD 75 QA check. It does not require login and helps buyers avoid paying for low-risk forms.
 
