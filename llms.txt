@@ -1,0 +1,45 @@
+# AI Agent Security Mini-Audit
+
+> Free no-login self-check and optional paid launch-readiness review for AI-agent workflows.
+
+Canonical site: https://mauroceron.github.io/ai-agent-security-mini-audit/
+GitHub repository: https://github.com/MAUROCERON/ai-agent-security-mini-audit
+
+## Main Pages
+
+- Free self-check: https://mauroceron.github.io/ai-agent-security-mini-audit/self-check.html
+- Security checklist: https://mauroceron.github.io/ai-agent-security-mini-audit/ai-agent-security-checklist.html
+- Sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/sample-report.html
+- Buyer intake: https://mauroceron.github.io/ai-agent-security-mini-audit/intake.html
+- Agency handoff QA: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-handoff-qa.html
+- Paid mini-audit offer: https://mauroceron.github.io/ai-agent-security-mini-audit/
+
+## What This Is
+
+AI Agent Risk Self-Check is a browser-only scoring tool for one AI-agent or browser-automation workflow. It helps builders review visible launch risk before an agent touches tools, browser sessions, CRM records, messages, customer data, files, logs, screenshots, MCP servers or other external systems.
+
+The paid USD 59 mini-audit is a fixed-scope launch decision report for one workflow. It is not a full penetration test, compliance audit or legal opinion.
+
+## Review Themes
+
+- Prompt injection and untrusted content boundaries.
+- Tool permissions and excessive agency.
+- Browser/session isolation.
+- Human approval gates.
+- Sensitive logs, screenshots, exports and retention.
+- MCP/tool/plugin supply-chain boundaries.
+- Failure recovery, retries, cost limits and stop paths.
+- OWASP Agentic, OWASP LLM and NIST AI 600-1 themed mapping.
+
+## Paid Review Output
+
+- Launch verdict: ship, ship after fixes, or stop until high-risk gaps are closed.
+- Up to five evidence-backed findings.
+- Fixes and retest steps.
+- Tool/action inventory.
+- One to three copy-paste remediation tickets.
+- Short customer/security note for handoff or review.
+
+## Payment
+
+Payment is handled through PayPal Payments Standard on the public pages. PayPal receiver configured by the owner: mauro_ceron1@hotmail.com.
