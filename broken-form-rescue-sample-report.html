@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Broken Lead Form Rescue Sample Report</title>
+    <meta
+      name="description"
+      content="An anonymized sample of the USD 100 Broken Lead Form Rescue Brief: evidence, payback test, likely root cause, fix path and retest plan."
+    >
+    <meta property="og:title" content="Broken Lead Form Rescue Sample Report">
+    <meta property="og:description" content="See what the USD 100 rescue brief delivers before paying.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mauroceron.github.io/ai-agent-security-mini-audit/broken-form-rescue-sample-report.html">
+    <link rel="canonical" href="https://mauroceron.github.io/ai-agent-security-mini-audit/broken-form-rescue-sample-report.html">
+    <link rel="stylesheet" href="styles.css?v=13">
+  </head>
+  <body>
+    <main class="page-shell document-shell">
+      <nav class="top-nav" aria-label="Page links">
+        <a href="index.html">Main offer</a>
+        <a href="broken-form-rescue.html">Broken form rescue</a>
+        <a href="contact-funnel-self-check.html">Free self-check</a>
+        <a href="contact-funnel-qa.html">Funnel QA</a>
+        <a href="agency-bundle.html">Agency bundle</a>
+      </nav>
+
+      <article class="doc-panel">
+        <p class="kicker">Anonymized example deliverable</p>
+        <h1>
+          <span>Broken Lead Form</span>
+          <span>Rescue Sample</span>
+          <span>Report</span>
+        </h1>
+        <p class="lede">
+          This sample shows the shape of the USD 100 rescue brief. It uses
+          anonymized public-form patterns from live prospect research: disabled
+          API route, missing delivery proof and no visible reply capture.
+        </p>
+
+        <section>
+          <h2>Executive verdict</h2>
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Verdict</td>
+                  <td>High-risk lead loss until delivery is proven.</td>
+                </tr>
+                <tr>
+                  <td>Payback test</td>
+                  <td>Pay if one qualified lead, audit booking or client handoff is worth more than USD 100.</td>
+                </tr>
+                <tr>
+                  <td>First fix</td>
+                  <td>Route the public form to a real backend and capture reply email before showing success.</td>
+                </tr>
+                <tr>
+                  <td>Retest</td>
+                  <td>Submit one safe test lead and confirm endpoint, response code, success state and destination delivery.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>Evidence snapshot</h2>
+          <ul class="plain-list">
+            <li>Public page sells audits, demos or custom automation work.</li>
+            <li>Primary CTA sends users to a contact/audit form.</li>
+            <li>Visible form fields collect buyer intent, workflow pain or company context.</li>
+            <li>Observed failure pattern: disabled API, same-page GET, missing action or no contact-delivery request.</li>
+            <li>No CAPTCHA bypass, phone workaround, private dashboard access or fake customer story was used.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Failure pattern A: disabled API</h2>
+          <p>
+            The form is visible and appears business-critical, but the action
+            points to a disabled or placeholder route such as
+            <code>/api/disabled</code>. The buyer can complete the form, yet
+            the page has no proven path to email, CRM, Slack, Sheet, Airtable,
+            n8n, Make, Zapier or a custom intake queue.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Likely cause</td>
+                  <td>Launch placeholder left in production, endpoint removed, backend disabled or form copied from a template without wiring.</td>
+                </tr>
+                <tr>
+                  <td>Risk</td>
+                  <td>High-intent users believe they submitted; owner may never see the lead.</td>
+                </tr>
+                <tr>
+                  <td>First fix</td>
+                  <td>Replace the placeholder action with a working POST endpoint or hosted form backend.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>Failure pattern B: same-page query submit</h2>
+          <p>
+            The form submits with GET to the same page and appends the buyer's
+            message to the URL. That can look like a successful click, but it
+            does not prove that a lead was delivered anywhere. If the page also
+            lacks visible name and email fields, replyability is weak even if
+            the message appears in logs.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <tbody>
+                <tr>
+                  <td>Likely cause</td>
+                  <td>Static form markup without a configured action, serverless handler or hosted-form integration.</td>
+                </tr>
+                <tr>
+                  <td>Risk</td>
+                  <td>Messages may be lost, anonymized, stored only in logs or never routed to sales/support.</td>
+                </tr>
+                <tr>
+                  <td>First fix</td>
+                  <td>Add reply fields, switch to POST and confirm the final destination receives the submission.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>Patch-ready notes</h2>
+          <ul class="plain-list">
+            <li>Astro/static site: add Formspree, Web3Forms, Netlify Forms or a server endpoint; keep a hidden honeypot.</li>
+            <li>Next.js: create a route handler, validate fields, send to email/CRM and return JSON success only after delivery.</li>
+            <li>n8n/Make/Zapier: POST to a webhook, add a delivery confirmation step and log submission IDs.</li>
+            <li>WordPress: confirm WPForms/Gravity Forms stores entries and sends notifications from the correct domain.</li>
+            <li>Any stack: add a safe test lead and document endpoint, response code, success state and destination proof.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Buy/no-buy note</h2>
+          <p>
+            Buy the USD 100 rescue brief only if the broken form is attached to
+            paid traffic, sales calls, audits, demos, high-value support or
+            agency handoff. Do not buy it for a low-traffic personal page where
+            missed submissions are not commercially meaningful.
+          </p>
+          <p>
+            The paid brief includes one retest after the first fix within 7
+            days, so the value is not just diagnosis. It closes the loop with
+            proof that the lead path works.
+          </p>
+          <p>
+            <a class="solid-link" href="broken-form-rescue.html">Buy the rescue brief</a>
+          </p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
