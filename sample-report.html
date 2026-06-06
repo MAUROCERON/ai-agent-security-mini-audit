@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample Report - AI Agent Security Mini-Audit</title>
+    <meta name="description" content="Sample deliverable for the AI Agent Security Mini-Audit service.">
+    <link rel="stylesheet" href="styles.css?v=5">
+  </head>
+  <body>
+    <main class="page-shell document-shell">
+      <article class="doc-panel">
+        <p class="kicker">Sample deliverable</p>
+        <h1>
+          <span>Mini-Audit</span>
+          <span>Sample Report</span>
+        </h1>
+        <p class="lede">
+          Demo SaaS Agent: browser automation that opens a CRM, reads support
+          tickets and drafts replies.
+        </p>
+
+        <section>
+          <h2>Executive summary</h2>
+          <p>
+            The demo agent is useful but should not be launched broadly until
+            tool permissions, browser isolation and approval gates are tightened.
+            The highest risk is that untrusted ticket content can influence
+            browser actions in a logged-in CRM session.
+          </p>
+        </section>
+
+        <section>
+          <h2>Top findings</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Risk</th>
+                  <th>Severity</th>
+                  <th>Fix</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>A1</td>
+                  <td>Ticket text can instruct the agent to export contacts.</td>
+                  <td>High</td>
+                  <td>Treat ticket text as untrusted data and block content-driven tool instructions.</td>
+                </tr>
+                <tr>
+                  <td>A2</td>
+                  <td>Agent uses a full human CRM session.</td>
+                  <td>High</td>
+                  <td>Use a dedicated least-privilege service account.</td>
+                </tr>
+                <tr>
+                  <td>A3</td>
+                  <td>No approval before sending replies.</td>
+                  <td>Medium</td>
+                  <td>Require human approval before send.</td>
+                </tr>
+                <tr>
+                  <td>A4</td>
+                  <td>Screenshots stored without retention rule.</td>
+                  <td>Medium</td>
+                  <td>Delete after 7 days or redact sensitive screenshots.</td>
+                </tr>
+                <tr>
+                  <td>A5</td>
+                  <td>Tool logs include customer email addresses.</td>
+                  <td>Medium</td>
+                  <td>Redact PII fields from logs.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>Recommended next steps</h2>
+          <ol>
+            <li>Create a dedicated CRM role with read-ticket and draft-reply permissions only.</li>
+            <li>Add approval before sending, exporting or changing customer records.</li>
+            <li>Isolate the browser profile and clear storage between tasks.</li>
+            <li>Add prompt-injection regression tests for ticket, email and web content.</li>
+            <li>Redact PII from logs and set a retention window.</li>
+          </ol>
+        </section>
+
+        <div class="doc-actions">
+          <a class="solid-link" href="index.html">Back to purchase options</a>
+          <a class="text-link" href="intake.html">Read intake questions</a>
+        </div>
+      </article>
+    </main>
+  </body>
+</html>
