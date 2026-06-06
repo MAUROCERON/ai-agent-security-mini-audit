@@ -1,6 +1,26 @@
-# Direct PayPal Landing Page
+# AI Agent Risk Self-Check
 
-This is a static landing page for direct sales:
+Static, no-login web tool for checking visible launch risk in one AI-agent or browser-automation workflow.
+
+Public URLs:
+
+- Free self-check: https://mauroceron.github.io/ai-agent-security-mini-audit/self-check.html
+- Offer page: https://mauroceron.github.io/ai-agent-security-mini-audit/
+- Sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/sample-report.html
+- Intake questions: https://mauroceron.github.io/ai-agent-security-mini-audit/intake.html
+
+## What Works Without Login
+
+The self-check runs in the browser and lets a visitor:
+
+- Score one AI-agent workflow from 0 to 21.
+- Review risk signals for prompt injection, tool permissions, browser sessions, secrets exposure, approval gates, sensitive logs, budgets and recovery.
+- Copy a short risk brief.
+- Open the public sample report and intake page.
+
+No workflow details are submitted by the self-check. The paid mini-audit button is optional.
+
+## Files
 
 - `index.html`: offer and PayPal buttons.
 - `self-check.html`: free AI-agent risk self-check with paid audit CTA.
@@ -11,7 +31,7 @@ This is a static landing page for direct sales:
 
 ## Payment buttons
 
-The buttons use PayPal Payments Standard with:
+The optional paid buttons use PayPal Payments Standard with:
 
 - Mini-audit: USD 59.
 - Template pack: USD 19.
@@ -19,11 +39,7 @@ The buttons use PayPal Payments Standard with:
 
 Direct PayPal checkout does not automatically deliver the ZIP. Fulfillment is manual after receipt confirmation.
 
-The full ZIP is not published here. Only the sample report and intake page are public.
-
-Expected public URL after GitHub Pages deployment:
-
-`https://mauroceron.github.io/ai-agent-security-mini-audit/`
+The full paid ZIP is not published here. The free self-check, sample report and intake page are public.
 
 ## Local preview
 
