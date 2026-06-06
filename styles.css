@@ -264,6 +264,13 @@ h2 {
   line-height: 1.45;
 }
 
+.trust-strip a {
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 .decision-band {
   display: grid;
   grid-template-columns: 1fr 1fr;
