@@ -38,6 +38,16 @@
         </p>
 
         <section>
+          <h2>0. Standards Anchor</h2>
+          <ul class="plain-list">
+            <li>Map high and medium issues to practical OWASP Agentic, OWASP LLM or NIST AI 600-1 themes.</li>
+            <li>Use the mapping to focus fixes, not to claim a formal certification.</li>
+            <li>Separate confirmed findings from hypotheses.</li>
+            <li>For every high or medium issue, write the fix, retest step and reason it pays back.</li>
+          </ul>
+        </section>
+
+        <section>
           <h2>1. Scope And Permissions</h2>
           <ul class="plain-list">
             <li>List every tool, API, file path, browser profile and external domain the agent can reach.</li>
@@ -84,6 +94,16 @@
             <li>Store prompts, tool outputs and screenshots only when they are needed for debugging or audit evidence.</li>
             <li>Document rollback, token revocation and incident-response steps before launch.</li>
             <li>Run a small retest after every permission or tool-scope change.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>6. What A Paid Report Should Add</h2>
+          <ul class="plain-list">
+            <li>A launch verdict: ship, ship after fixes, or stop until a high-risk gap is closed.</li>
+            <li>Top findings with evidence, severity, framework mapping, fix and retest step.</li>
+            <li>One to three remediation tickets ready to assign.</li>
+            <li>A short customer/security note the team can reuse.</li>
           </ul>
         </section>
 
