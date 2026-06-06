@@ -10,6 +10,7 @@ GitHub repository: https://github.com/MAUROCERON/ai-agent-security-mini-audit
 - Free self-check: https://mauroceron.github.io/ai-agent-security-mini-audit/self-check.html
 - Security checklist: https://mauroceron.github.io/ai-agent-security-mini-audit/ai-agent-security-checklist.html
 - Sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/sample-report.html
+- Pay and start: https://mauroceron.github.io/ai-agent-security-mini-audit/start.html
 - Buyer intake: https://mauroceron.github.io/ai-agent-security-mini-audit/intake.html
 - Agency handoff QA: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-handoff-qa.html
 - Voice/chat agent QA: https://mauroceron.github.io/ai-agent-security-mini-audit/voice-chat-agent-qa.html
@@ -21,6 +22,8 @@ GitHub repository: https://github.com/MAUROCERON/ai-agent-security-mini-audit
 AI Agent Risk Self-Check is a browser-only scoring tool for one AI-agent or browser-automation workflow. It helps builders review visible launch risk before an agent touches tools, browser sessions, CRM records, messages, customer data, files, logs, screenshots, MCP servers or other external systems.
 
 The paid USD 59 mini-audit is a fixed-scope launch decision report for one workflow. It is not a full penetration test, compliance audit or legal opinion.
+
+The pay-and-start page is the shortest conversion path for interested leads: PayPal payment, minimum intake, redacted evidence instructions and delivery timeline.
 
 Voice/chat agent QA is the same fixed-scope review positioned for customer-facing voice agents, chatbots, support agents and white-label bot handoffs.
 
