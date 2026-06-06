@@ -335,6 +335,44 @@
         line-height: 1.55;
       }
 
+      .paid-next {
+        border: 1px solid var(--ink);
+        background: #fffdf6;
+        padding: 18px;
+        margin-top: 18px;
+        display: grid;
+        gap: 12px;
+      }
+
+      .paid-next h3 {
+        margin: 0;
+        font-size: 23px;
+        line-height: 1.05;
+      }
+
+      .paid-next p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .paid-next .mini {
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: var(--muted);
+        letter-spacing: 0.05em;
+      }
+
+      .cta-stack {
+        display: grid;
+        gap: 9px;
+      }
+
+      .cta-stack .link-button {
+        text-align: center;
+      }
+
       .actions {
         display: flex;
         flex-wrap: wrap;
@@ -586,6 +624,7 @@
           <div class="actions">
             <button type="button" id="copyReport">Copy report</button>
             <button type="reset" class="secondary">Reset</button>
+            <a class="link-button" href="contact-funnel-qa.html">Buy QA - USD 75</a>
             <a class="link-button secondary" href="contact-funnel-self-check.html">Full worksheet</a>
           </div>
           <p class="toast" id="toast" aria-live="polite"></p>
@@ -601,6 +640,22 @@
             <p id="paybackText">
               This estimate multiplies unchecked risk by lead value, close rate,
               and monthly volume. It is a triage number, not accounting advice.
+            </p>
+          </div>
+          <div class="paid-next" aria-label="Paid next step">
+            <span class="mini" id="paidNextBadge">Decision rule</span>
+            <h3 id="paidNextTitle">Do not buy yet</h3>
+            <p id="paidNextText">
+              If the score stays low after a real submission and delivery check,
+              keep this as an internal launch checklist.
+            </p>
+            <div class="cta-stack">
+              <a class="link-button" id="paidNextPrimary" href="contact-funnel-qa.html">Buy Contact Funnel QA - USD 75</a>
+              <a class="link-button secondary" id="paidNextSecondary" href="broken-form-rescue.html">Broken Lead Form Rescue - USD 100</a>
+              <a class="link-button secondary" href="contact-funnel-sample-report.html">See sample QA report</a>
+            </div>
+            <p class="mini">
+              Pay only when one recovered lead, handoff, or failed-form fix is worth more than the fee.
             </p>
           </div>
           <div class="notes" style="margin-top:18px">
@@ -636,6 +691,11 @@
       const summaryText = document.getElementById("summaryText");
       const paybackTitle = document.getElementById("paybackTitle");
       const paybackText = document.getElementById("paybackText");
+      const paidNextBadge = document.getElementById("paidNextBadge");
+      const paidNextTitle = document.getElementById("paidNextTitle");
+      const paidNextText = document.getElementById("paidNextText");
+      const paidNextPrimary = document.getElementById("paidNextPrimary");
+      const paidNextSecondary = document.getElementById("paidNextSecondary");
       const copyReport = document.getElementById("copyReport");
       const toast = document.getElementById("toast");
       const form = document.getElementById("smokeForm");
@@ -664,8 +724,51 @@
         return { score, exposure, missingLabels };
       }
 
+      function paidRecommendation(score, exposure, missingLabels) {
+        const hasDeliveryRisk = missingLabels.some((label) => /backend|2xx|inbox|CRM|reply path/i.test(label));
+        const hasBlockingRisk = missingLabels.some((label) => /fake data|Spam protection|Mobile layout/i.test(label));
+
+        if (score < 20 && exposure < 75) {
+          return {
+            badge: "Decision rule",
+            title: "Do not buy yet",
+            text: "This looks like an internal checklist case. Run one real submission, confirm delivery, and keep monitoring before paying for QA.",
+            primaryHref: "contact-funnel-self-check.html",
+            primaryLabel: "Use full worksheet",
+            secondaryHref: "contact-funnel-sample-report.html",
+            secondaryLabel: "See sample QA report",
+            report: "Paid next step: do not buy yet; use the full worksheet and rerun after any form change."
+          };
+        }
+
+        if (hasDeliveryRisk || score >= 50 || exposure >= 100) {
+          return {
+            badge: "Worth paying if",
+            title: "Buy the USD 75 QA when a lead is worth more than the fee",
+            text: `The current inputs show ${money(exposure)} in weighted monthly exposure. A paid QA pass is rational if it can recover one lead, prove endpoint delivery, or prevent a failed campaign handoff.`,
+            primaryHref: "contact-funnel-qa.html",
+            primaryLabel: "Buy Contact Funnel QA - USD 75",
+            secondaryHref: hasBlockingRisk ? "broken-form-rescue.html" : "broken-form-rescue-sample-report.html",
+            secondaryLabel: hasBlockingRisk ? "Fix a broken form - USD 100" : "See rescue sample report",
+            report: "Paid next step: Contact Funnel QA at USD 75 is rational if one recovered or protected lead is worth more than USD 75."
+          };
+        }
+
+        return {
+          badge: "Maybe pay after proof",
+          title: "Use the free proof first",
+          text: `The estimate is ${money(exposure)}. If the next real submission does not produce endpoint proof and inbox/CRM delivery proof, move to the USD 75 QA.`,
+          primaryHref: "contact-funnel-self-check.html",
+          primaryLabel: "Use full worksheet",
+          secondaryHref: "contact-funnel-qa.html",
+          secondaryLabel: "Buy QA if proof fails - USD 75",
+          report: "Paid next step: use the full worksheet first; buy the USD 75 QA only if endpoint or delivery proof fails."
+        };
+      }
+
       function render() {
         const { score, exposure, missingLabels } = currentState();
+        const recommendation = paidRecommendation(score, exposure, missingLabels);
         scoreValue.textContent = score;
         scoreBar.style.setProperty("--score", score);
 
@@ -690,14 +793,28 @@
           summaryText.textContent = `${missingLabels.length} unchecked signal(s): ${missingLabels.slice(0, 3).join("; ")}${missingLabels.length > 3 ? "; ..." : "."}`;
           paybackText.textContent = `At this input level, the unchecked risk maps to about ${money(exposure)} of monthly weighted exposure. Fix delivery proof before adding traffic.`;
         }
+
+        paidNextBadge.textContent = recommendation.badge;
+        paidNextTitle.textContent = recommendation.title;
+        paidNextText.textContent = recommendation.text;
+        paidNextPrimary.href = recommendation.primaryHref;
+        paidNextPrimary.textContent = recommendation.primaryLabel;
+        paidNextSecondary.href = recommendation.secondaryHref;
+        paidNextSecondary.textContent = recommendation.secondaryLabel;
       }
 
       function reportText() {
         const { score, exposure, missingLabels } = currentState();
+        const recommendation = paidRecommendation(score, exposure, missingLabels);
         return [
           "Contact Form Smoke Test",
           `Risk score: ${score}/100`,
           `Estimated monthly weighted exposure: ${money(exposure)}`,
+          recommendation.report,
+          "",
+          "Paid links:",
+          "Contact Funnel QA - USD 75: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-qa.html",
+          "Broken Lead Form Rescue - USD 100: https://mauroceron.github.io/ai-agent-security-mini-audit/broken-form-rescue.html",
           "",
           "Unchecked signals:",
           ...(missingLabels.length ? missingLabels.map((item) => `- ${item}`) : ["- None"]),
