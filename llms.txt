@@ -14,6 +14,7 @@ GitHub repository: https://github.com/MAUROCERON/ai-agent-security-mini-audit
 - Buyer intake: https://mauroceron.github.io/ai-agent-security-mini-audit/intake.html
 - Agency handoff QA: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-handoff-qa.html
 - USD 100 agency bundle: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-bundle.html
+- USD 75 contact funnel QA: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-qa.html
 - Voice/chat agent QA: https://mauroceron.github.io/ai-agent-security-mini-audit/voice-chat-agent-qa.html
 - Voice/chat sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/voice-chat-sample-report.html
 - Paid mini-audit offer: https://mauroceron.github.io/ai-agent-security-mini-audit/
@@ -29,6 +30,8 @@ The pay-and-start page is the shortest conversion path for interested leads: Pay
 Voice/chat agent QA is the same fixed-scope review positioned for customer-facing voice agents, chatbots, support agents and white-label bot handoffs.
 
 The USD 100 agency bundle is for teams with two redacted client workflows or one workflow plus an expanded first-fix retest pass. It gives each workflow a launch verdict, first fix, retest criteria and a reusable client-safe note.
+
+The USD 75 contact funnel QA checks whether one public contact/intake funnel actually delivers leads through Formspree, Web3Forms, WPForms, Netlify Forms, a custom API, CRM routing or automation webhook. It reports backend response, visible page state, lost-lead risk, first fix and retest steps.
 
 The voice/chat sample report shows the expected paid deliverable shape for a fictional AI receptionist: launch verdict, top risks, evidence reviewed, first fixes, retest criteria and reusable client note.
 
