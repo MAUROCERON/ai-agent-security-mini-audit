@@ -307,6 +307,69 @@ h2 {
   margin: 0;
 }
 
+.value-floor {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  gap: 24px;
+  align-items: start;
+  margin-bottom: 28px;
+  padding: 26px;
+  border: 2px solid var(--ink);
+  background: rgba(255, 255, 255, 0.34);
+}
+
+.value-floor p {
+  margin: 14px 0 0;
+  color: rgba(22, 22, 22, 0.74);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.value-floor ol {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: floor;
+}
+
+.value-floor li {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 0.42fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+  padding: 14px;
+  border: 1px solid var(--line);
+  background: rgba(245, 239, 227, 0.72);
+}
+
+.value-floor li::before {
+  counter-increment: floor;
+  content: counter(floor);
+  display: inline-flex;
+  width: 32px;
+  height: 32px;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--ink);
+  background: var(--acid);
+  color: var(--ink);
+  font-family: Bahnschrift, Candara, sans-serif;
+  font-weight: 800;
+}
+
+.value-floor strong {
+  font-family: Bahnschrift, Candara, sans-serif;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+.value-floor span {
+  color: rgba(22, 22, 22, 0.74);
+  line-height: 1.45;
+}
+
 .value-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -832,6 +895,7 @@ th {
   .proof-band,
   .decision-band,
   .assurance-band,
+  .value-floor,
   .value-grid,
   .trust-strip,
   .check-layout {
@@ -859,6 +923,14 @@ th {
 
   .sample-band {
     display: grid;
+  }
+
+  .value-floor li {
+    grid-template-columns: 38px minmax(0, 1fr);
+  }
+
+  .value-floor span {
+    grid-column: 2;
   }
 
   .doc-panel {
