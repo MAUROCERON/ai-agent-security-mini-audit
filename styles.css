@@ -774,6 +774,49 @@ th {
   background: var(--clay);
 }
 
+.payback-gate {
+  display: grid;
+  gap: 10px;
+  margin: 18px 0;
+  padding: 16px;
+  border: 2px solid var(--ink);
+  background: rgba(255, 255, 255, 0.32);
+}
+
+.payback-gate .offer-label {
+  margin: 0;
+}
+
+.payback-gate label {
+  display: grid;
+  gap: 6px;
+  color: rgba(22, 22, 22, 0.74);
+  font-family: Bahnschrift, Candara, sans-serif;
+  font-size: 0.86rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.payback-gate input {
+  width: 100%;
+  min-height: 42px;
+  border: 2px solid var(--ink);
+  background: rgba(245, 239, 227, 0.92);
+  color: var(--ink);
+  padding: 8px 10px;
+  font: inherit;
+}
+
+.payback-gate p {
+  margin: 0;
+}
+
+.payback-gate strong {
+  display: inline-block;
+  color: var(--ink);
+  font-family: Bahnschrift, Candara, sans-serif;
+}
+
 .priority-list {
   display: grid;
   gap: 10px;
