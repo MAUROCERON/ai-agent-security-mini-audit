@@ -43,7 +43,7 @@ The USD 75 contact funnel QA checks whether one public contact/intake funnel act
 
 The USD 29 contact form proof check is the lower-friction first paid step. It checks one public contact, demo, audit, callback or intake form and returns endpoint evidence, visible state, a short verdict and a next-step recommendation. It exists so buyers can start cheaply and upgrade only when the proof check shows meaningful risk.
 
-The USD 50 two-form proof pack checks two public forms for the same brand, launch or client handoff. It lowers the cost to USD 25 per form and is the best-value path when a buyer has both a contact form and a demo, audit, callback or newsletter form.
+The USD 50 two-form proof pack checks two public forms for the same brand, launch or client handoff. It lowers the cost to USD 25 per form and is the best-value path when a buyer has both a contact form and a demo, audit, callback or newsletter form. It includes one short proof note per form, developer-ready ticket text for actionable failures, and one first-fix retest reply within 7 days for one affected form.
 
 The contact form proof sample shows the expected USD 29 deliverable shape: verdict, evidence table, client-safe note and upgrade recommendation.
 
