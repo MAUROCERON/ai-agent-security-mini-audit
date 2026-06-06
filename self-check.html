@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://mauroceron.github.io/ai-agent-security-mini-audit/self-check.html">
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://mauroceron.github.io/ai-agent-security-mini-audit/self-check.html">
-    <link rel="stylesheet" href="styles.css?v=6">
+    <link rel="stylesheet" href="styles.css?v=7">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -156,9 +156,21 @@
             No high-risk signals selected yet. Keep the agent scoped, logged
             and approval-gated before launch.
           </p>
+          <div class="next-action" id="nextAction">
+            <p class="offer-label">Best next action</p>
+            <strong id="actionTitle">Use the free checklist first</strong>
+            <p id="actionCopy">
+              The paid report should save a risky launch, customer answer or
+              engineering decision. If this is only a toy demo, do not buy yet.
+            </p>
+            <ul id="valueChecks" aria-label="What makes the paid review pay for itself">
+              <li>There is a real pilot, customer demo or production launch.</li>
+              <li>The workflow can act on systems, records, browsers or customer data.</li>
+            </ul>
+          </div>
           <div class="priority-list" id="priorityList" aria-label="Top priorities"></div>
           <button class="copy-button" type="button" id="copyBrief">Copy risk brief</button>
-          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="checkoutForm">
             <input type="hidden" name="cmd" value="_xclick">
             <input type="hidden" name="business" value="mauro_ceron1@hotmail.com">
             <input type="hidden" name="item_name" value="AI Agent Security Mini-Audit">
@@ -166,8 +178,9 @@
             <input type="hidden" name="amount" value="59.00">
             <input type="hidden" name="currency_code" value="USD">
             <input type="hidden" name="no_shipping" value="1">
+            <input type="hidden" name="custom" value="self-check-score-0" id="paypalCustom">
             <input type="hidden" name="return" value="https://mauroceron.github.io/ai-agent-security-mini-audit/thank-you.html">
-            <button type="submit">Get the USD 59 mini-audit</button>
+            <button type="submit" id="checkoutButton" aria-describedby="paidFitNote actionCopy">Buy only if this is a real launch risk</button>
           </form>
           <p class="paid-fit-note" id="paidFitNote">
             Paid review is usually worth it if the agent can take actions,
@@ -187,6 +200,13 @@
       const priorityEl = document.getElementById("priorityList");
       const copyButton = document.getElementById("copyBrief");
       const paidFitEl = document.getElementById("paidFitNote");
+      const nextActionEl = document.getElementById("nextAction");
+      const actionTitleEl = document.getElementById("actionTitle");
+      const actionCopyEl = document.getElementById("actionCopy");
+      const valueChecksEl = document.getElementById("valueChecks");
+      const checkoutForm = document.getElementById("checkoutForm");
+      const checkoutButton = document.getElementById("checkoutButton");
+      const paypalCustom = document.getElementById("paypalCustom");
 
       function getState() {
         const selected = inputs
@@ -212,25 +232,70 @@
         let level = "Low visible risk";
         let summary = "No high-risk signals selected yet. Keep the agent scoped, logged and approval-gated before launch.";
         let paidFit = "Do not buy the paid review for a toy demo. Use the free checklist unless this workflow is close to launch or touches real systems.";
+        let actionTitle = "Use the free checklist first";
+        let actionCopy = "The paid report should save a risky launch, customer answer or engineering decision. If this is only a toy demo, do not buy yet.";
+        let checkoutLabel = "Buy only if this is a real launch risk";
+        let fit = "low";
+        let valueChecks = [
+          "There is a real pilot, customer demo or production launch.",
+          "The workflow can act on systems, records, browsers or customer data."
+        ];
 
         if (score >= 16) {
           level = "Critical pre-launch risk";
           summary = "This workflow should get a hard boundary review before it is allowed to act on production systems.";
           paidFit = "Paid review is strongly justified before launch because multiple high-risk controls need evidence and retesting.";
+          actionTitle = "Stop and get a launch decision";
+          actionCopy = "The USD 59 report is worth paying for if it prevents one unsafe production action or gives you a customer-ready risk answer before launch.";
+          checkoutLabel = "Get the USD 59 launch decision";
+          fit = "critical";
+          valueChecks = [
+            "You need a ship, ship-after-fixes or stop verdict before production.",
+            "You need the first fixes, retest steps and a reusable security note."
+          ];
         } else if (score >= 10) {
           level = "High risk";
           summary = "The agent has enough authority or exposure to justify a focused audit before launch.";
           paidFit = "Paid review is likely worth it if this workflow is entering pilot, demo or production.";
+          actionTitle = "Buy before pilot or customer demo";
+          actionCopy = "This is the strongest paid fit: the report should turn scattered risk into a launch verdict, prioritized fixes and retest evidence.";
+          checkoutLabel = "Get the USD 59 mini-audit";
+          fit = "high";
+          valueChecks = [
+            "A customer, stakeholder or founder needs confidence before launch.",
+            "One bad tool call, leaked record or unsafe browser action would cost more than USD 59."
+          ];
         } else if (score >= 5) {
           level = "Medium risk";
           summary = "The workflow has real risk signals. Tighten permissions, approvals and logging before expanding scope.";
           paidFit = "Paid review may be worth it if the workflow touches customer data, authenticated browsers or business records.";
+          actionTitle = "Buy only with real business context";
+          actionCopy = "The paid report is worth it here when the workflow is close to launch, handles real data or needs a crisp engineering priority list.";
+          checkoutLabel = "Buy if this is near launch";
+          fit = "medium";
+          valueChecks = [
+            "You need to decide which controls to fix first.",
+            "The agent touches accounts, records, messages, files or authenticated sessions."
+          ];
         }
 
         levelEl.textContent = level;
         summaryEl.textContent = summary;
         paidFitEl.textContent = paidFit;
+        actionTitleEl.textContent = actionTitle;
+        actionCopyEl.textContent = actionCopy;
+        checkoutButton.textContent = checkoutLabel;
+        checkoutForm.dataset.fit = fit;
+        nextActionEl.dataset.fit = fit;
+        paypalCustom.value = `self-check-score-${score}-${level.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "")}`;
         priorityEl.innerHTML = "";
+        valueChecksEl.innerHTML = "";
+
+        valueChecks.forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          valueChecksEl.appendChild(li);
+        });
 
         selected.slice(0, 3).forEach((item, index) => {
           const row = document.createElement("p");
@@ -244,8 +309,13 @@
         const lines = [
           `AI Agent Risk Self-Check score: ${score}/21`,
           `Level: ${levelEl.textContent}`,
+          `Paid-fit recommendation: ${actionTitleEl.textContent}`,
+          `Why it may pay for itself: ${actionCopyEl.textContent}`,
           "Selected signals:",
-          ...(selected.length ? selected.map((item) => `- ${item.label}`) : ["- None selected"])
+          ...(selected.length ? selected.map((item) => `- ${item.label}`) : ["- None selected"]),
+          "",
+          "Sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/sample-report.html",
+          "Checkout: https://mauroceron.github.io/ai-agent-security-mini-audit/"
         ];
 
         try {
