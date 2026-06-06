@@ -3,6 +3,8 @@
 This is a static landing page for direct sales:
 
 - `index.html`: offer and PayPal buttons.
+- `sample-report.html`: public sample deliverable.
+- `intake.html`: public intake questions for buyers.
 - `thank-you.html`: buyer instructions after payment.
 - `assets/ai-agent-security-cover.png`: product visual.
 
@@ -15,6 +17,8 @@ The buttons use PayPal Payments Standard with:
 - PayPal receiver: `mauro_ceron1@hotmail.com`.
 
 Direct PayPal checkout does not automatically deliver the ZIP. Fulfillment is manual after receipt confirmation.
+
+The full ZIP is not published here. Only the sample report and intake page are public.
 
 Expected public URL after GitHub Pages deployment:
 
