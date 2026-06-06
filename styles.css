@@ -236,7 +236,7 @@ h2 {
 
 .trust-strip {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   margin-bottom: 28px;
   border: 2px solid var(--ink);
   background: rgba(255, 255, 255, 0.28);
@@ -282,11 +282,29 @@ h2 {
 }
 
 .decision-band p,
-.value-grid p {
+.value-grid p,
+.assurance-band p,
+.assurance-band li {
   margin: 14px 0 0;
   color: rgba(22, 22, 22, 0.74);
   font-size: 1rem;
   line-height: 1.55;
+}
+
+.assurance-band {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 24px;
+  align-items: center;
+  margin-bottom: 28px;
+  padding: 26px;
+  border: 2px solid var(--ink);
+  background: rgba(199, 239, 79, 0.18);
+  box-shadow: 8px 8px 0 rgba(22, 22, 22, 0.12);
+}
+
+.assurance-band ul {
+  margin: 0;
 }
 
 .value-grid {
@@ -813,6 +831,7 @@ th {
   .offer-grid,
   .proof-band,
   .decision-band,
+  .assurance-band,
   .value-grid,
   .trust-strip,
   .check-layout {
