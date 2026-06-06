@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Agent Security Checklist</title>
+    <meta
+      name="description"
+      content="A practical AI agent security checklist for tool permissions, prompt injection, browser sessions, logs, approvals, secrets and recovery."
+    >
+    <meta property="og:title" content="AI Agent Security Checklist">
+    <meta property="og:description" content="A practical checklist for AI agents that can browse, call tools, read files or update business systems.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://mauroceron.github.io/ai-agent-security-mini-audit/ai-agent-security-checklist.html">
+    <link rel="canonical" href="https://mauroceron.github.io/ai-agent-security-mini-audit/ai-agent-security-checklist.html">
+    <link rel="stylesheet" href="styles.css?v=6">
+  </head>
+  <body>
+    <main class="page-shell document-shell">
+      <nav class="top-nav" aria-label="Page links">
+        <a href="self-check.html">Self-check</a>
+        <a href="sample-report.html">Sample report</a>
+        <a href="intake.html">Intake</a>
+        <a href="index.html">Offer</a>
+      </nav>
+
+      <article class="doc-panel">
+        <p class="kicker">Practical checklist</p>
+        <h1>
+          <span>AI Agent</span>
+          <span>Security Checklist</span>
+        </h1>
+        <p>
+          Use this checklist before an AI agent touches browsers, customer
+          systems, files, SaaS APIs, email, CRM, billing, support tickets or
+          internal documents. It is written for small teams that need practical
+          launch-readiness evidence, not a full enterprise security program.
+        </p>
+
+        <section>
+          <h2>1. Scope And Permissions</h2>
+          <ul class="plain-list">
+            <li>List every tool, API, file path, browser profile and external domain the agent can reach.</li>
+            <li>Replace broad permissions with allowlists for domains, commands, records and action types.</li>
+            <li>Separate read-only tools from write-capable tools.</li>
+            <li>Set rate limits, spend caps, retry limits and maximum batch sizes.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>2. Prompt Injection Boundaries</h2>
+          <ul class="plain-list">
+            <li>Treat web pages, PDFs, tickets, emails, CRM notes and API responses as untrusted content.</li>
+            <li>Do not let untrusted content change system instructions, tool policy or approval rules.</li>
+            <li>Test hidden instructions, role impersonation, data-exfiltration requests and encoded payloads.</li>
+            <li>Keep tool outputs clearly separated from trusted operator instructions.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>3. Browser And Session Safety</h2>
+          <ul class="plain-list">
+            <li>Use a dedicated browser profile for the agent instead of a personal session.</li>
+            <li>Disable or tightly control downloads, uploads, clipboard use and saved passwords.</li>
+            <li>Constrain navigation to the minimum required domains.</li>
+            <li>Record enough evidence to replay what happened without exposing secrets.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>4. Approval Gates</h2>
+          <ul class="plain-list">
+            <li>Require human approval before sending external messages, issuing refunds, changing permissions or updating many records.</li>
+            <li>Show the exact tool call, arguments, target account and expected impact before approval.</li>
+            <li>Log who approved, when, and what changed after approval.</li>
+            <li>Block approval if the agent cannot explain why the action is safe.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>5. Logs, Secrets And Recovery</h2>
+          <ul class="plain-list">
+            <li>Redact tokens, credentials, customer secrets and private messages from logs by default.</li>
+            <li>Store prompts, tool outputs and screenshots only when they are needed for debugging or audit evidence.</li>
+            <li>Document rollback, token revocation and incident-response steps before launch.</li>
+            <li>Run a small retest after every permission or tool-scope change.</li>
+          </ul>
+        </section>
+
+        <section class="doc-actions">
+          <a class="solid-link" href="self-check.html">Run the free self-check</a>
+          <a class="text-link" href="sample-report.html">View sample deliverable</a>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
