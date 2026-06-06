@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Form Smoke Test</title>
+    <meta
+      name="description"
+      content="A free no-login browser checklist for checking whether a public contact, demo, audit, or intake form has obvious lead-loss risk."
+    >
+    <meta property="og:title" content="Contact Form Smoke Test">
+    <meta property="og:description" content="Score a public lead form before paid traffic or a client handoff depends on it. No signup, no tracking, no data sent.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-smoke-test.html">
+    <meta name="twitter:card" content="summary">
+    <link rel="canonical" href="https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-smoke-test.html">
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #141512;
+        --muted: #63655f;
+        --paper: #f6f1e8;
+        --panel: #fffaf0;
+        --line: #d8d0c1;
+        --green: #287a62;
+        --blue: #315b8f;
+        --amber: #b16a1a;
+        --red: #b14438;
+        --shadow: 0 22px 60px rgba(36, 30, 18, 0.16);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background:
+          linear-gradient(90deg, rgba(20, 21, 18, 0.035) 1px, transparent 1px),
+          linear-gradient(0deg, rgba(20, 21, 18, 0.035) 1px, transparent 1px),
+          var(--paper);
+        background-size: 28px 28px;
+        color: var(--ink);
+        font-family: Georgia, "Times New Roman", serif;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      .shell {
+        width: min(1180px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 28px 0 40px;
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 24px;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .topbar a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+
+      .mast {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(300px, 0.95fr);
+        gap: 28px;
+        align-items: stretch;
+        margin-bottom: 28px;
+      }
+
+      .hero,
+      .meter-card,
+      .panel {
+        border: 1px solid var(--line);
+        background: rgba(255, 250, 240, 0.88);
+        box-shadow: var(--shadow);
+      }
+
+      .hero {
+        padding: clamp(28px, 5vw, 54px);
+        min-height: 420px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .tag {
+        width: fit-content;
+        border: 1px solid var(--ink);
+        padding: 8px 10px;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 11px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 26px 0 18px;
+        max-width: 720px;
+        font-size: clamp(44px, 7vw, 92px);
+        line-height: 0.9;
+        letter-spacing: 0;
+        font-weight: 700;
+      }
+
+      .lede {
+        max-width: 650px;
+        color: var(--muted);
+        font-size: clamp(18px, 2.1vw, 24px);
+        line-height: 1.45;
+      }
+
+      .proof-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 28px;
+      }
+
+      .proof-row span {
+        border: 1px solid var(--line);
+        background: #fffdf6;
+        padding: 9px 11px;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 12px;
+      }
+
+      .meter-card {
+        padding: 24px;
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        gap: 18px;
+      }
+
+      .pipeline {
+        min-height: 230px;
+        border: 1px solid var(--line);
+        background: #151711;
+        color: #fffaf0;
+        padding: 22px;
+        display: grid;
+        align-content: center;
+        gap: 18px;
+      }
+
+      .pipe-row {
+        display: grid;
+        grid-template-columns: 1fr 28px 1fr 28px 1fr;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .pipe-box {
+        min-height: 74px;
+        border: 1px solid rgba(255, 250, 240, 0.38);
+        padding: 12px;
+        display: grid;
+        align-content: center;
+      }
+
+      .pipe-box strong {
+        display: block;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 11px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .pipe-box span {
+        margin-top: 6px;
+        color: rgba(255, 250, 240, 0.72);
+        font-size: 13px;
+        line-height: 1.35;
+      }
+
+      .arrow {
+        text-align: center;
+        font-family: "Lucida Console", Monaco, monospace;
+        color: #d6bd77;
+      }
+
+      .score {
+        border-top: 1px solid var(--line);
+        padding-top: 18px;
+      }
+
+      .score-line {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+      }
+
+      .score-value {
+        font-size: 70px;
+        line-height: 0.9;
+        font-weight: 700;
+      }
+
+      .risk-label {
+        text-align: right;
+        font-family: "Lucida Console", Monaco, monospace;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--green);
+      }
+
+      .bar {
+        height: 14px;
+        border: 1px solid var(--ink);
+        margin-top: 16px;
+        background: linear-gradient(90deg, var(--green), var(--amber), var(--red));
+        position: relative;
+      }
+
+      .bar::after {
+        content: "";
+        position: absolute;
+        top: -6px;
+        left: calc(var(--score, 0) * 1%);
+        width: 2px;
+        height: 24px;
+        background: var(--ink);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+        gap: 28px;
+      }
+
+      .panel {
+        padding: clamp(22px, 3vw, 34px);
+      }
+
+      h2 {
+        margin: 0 0 8px;
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .sub {
+        margin: 0 0 22px;
+        color: var(--muted);
+        line-height: 1.5;
+      }
+
+      .checks {
+        display: grid;
+        gap: 12px;
+      }
+
+      .check {
+        display: grid;
+        grid-template-columns: 26px 1fr;
+        gap: 12px;
+        align-items: start;
+        border: 1px solid var(--line);
+        background: #fffdf6;
+        padding: 15px;
+      }
+
+      input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+        accent-color: var(--green);
+      }
+
+      label strong {
+        display: block;
+        font-size: 17px;
+      }
+
+      label span {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        line-height: 1.4;
+      }
+
+      .inputs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin: 22px 0;
+      }
+
+      .field {
+        display: grid;
+        gap: 7px;
+      }
+
+      .field span {
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+
+      input[type="number"] {
+        width: 100%;
+        border: 1px solid var(--line);
+        background: #fffdf6;
+        color: var(--ink);
+        padding: 12px;
+        font: 18px Georgia, "Times New Roman", serif;
+      }
+
+      .result-box {
+        border: 1px solid var(--ink);
+        background: #151711;
+        color: #fffaf0;
+        padding: 20px;
+      }
+
+      .result-box h3 {
+        margin: 0 0 8px;
+        font-size: 25px;
+      }
+
+      .result-box p {
+        margin: 0;
+        color: rgba(255, 250, 240, 0.76);
+        line-height: 1.55;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      button,
+      .link-button {
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: #fffaf0;
+        padding: 12px 14px;
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        cursor: pointer;
+        text-decoration: none;
+      }
+
+      .secondary {
+        background: transparent;
+        color: var(--ink);
+      }
+
+      .notes {
+        display: grid;
+        gap: 14px;
+      }
+
+      .note {
+        border-left: 4px solid var(--blue);
+        background: #fffdf6;
+        padding: 15px;
+        line-height: 1.45;
+      }
+
+      .note strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      .footer {
+        margin-top: 28px;
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+
+      .toast {
+        min-height: 22px;
+        color: var(--green);
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      @media (max-width: 900px) {
+        .mast,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero {
+          min-height: auto;
+        }
+      }
+
+      @media (max-width: 620px) {
+        .shell {
+          width: min(100% - 20px, 1180px);
+          padding-top: 14px;
+        }
+
+        .topbar {
+          align-items: flex-start;
+          flex-direction: column;
+        }
+
+        .pipe-row,
+        .inputs {
+          grid-template-columns: 1fr;
+        }
+
+        .arrow {
+          transform: rotate(90deg);
+        }
+
+        h1 {
+          font-size: 48px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="shell">
+      <div class="topbar">
+        <a href="index.html">AI Agent Security Mini-Audit</a>
+        <span>No signup. No tracking. Data stays in your browser.</span>
+      </div>
+
+      <section class="mast">
+        <div class="hero">
+          <div>
+            <p class="tag">Tiny QA tool for public lead paths</p>
+            <h1>Contact Form Smoke Test</h1>
+            <p class="lede">
+              A browser-only checklist for catching obvious lead-loss risk in
+              contact, demo, audit, booking, and intake forms before paid
+              traffic or a client handoff depends on them.
+            </p>
+          </div>
+          <div class="proof-row" aria-label="Tool properties">
+            <span>10 checks</span>
+            <span>Payback math</span>
+            <span>Copyable report</span>
+            <span>No account</span>
+          </div>
+        </div>
+
+        <aside class="meter-card" aria-label="Risk score">
+          <div class="pipeline" aria-hidden="true">
+            <div class="pipe-row">
+              <div class="pipe-box">
+                <strong>Form</strong>
+                <span>Fields, consent, phone friction, hidden traps.</span>
+              </div>
+              <div class="arrow">-&gt;</div>
+              <div class="pipe-box">
+                <strong>Endpoint</strong>
+                <span>2xx response, redirect, webhook, CRM delivery.</span>
+              </div>
+              <div class="arrow">-&gt;</div>
+              <div class="pipe-box">
+                <strong>Handoff</strong>
+                <span>Human follow-up, proof, error state, next step.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="score">
+            <div class="score-line">
+              <div class="score-value" id="scoreValue">0</div>
+              <div class="risk-label" id="riskLabel">Low risk</div>
+            </div>
+            <div class="bar" id="scoreBar" style="--score:0"></div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="grid">
+        <form class="panel" id="smokeForm">
+          <h2>Run the smoke test</h2>
+          <p class="sub">
+            Check every item that is true. Leave it unchecked when you have not
+            verified it. Unknowns are risk until proven otherwise.
+          </p>
+
+          <div class="checks">
+            <div class="check">
+              <input id="c1" type="checkbox" data-risk="10">
+              <label for="c1">
+                <strong>The form has a real backend endpoint.</strong>
+                <span>Examples: Formspree, Web3Forms, Netlify Forms, custom API, or CRM webhook.</span>
+              </label>
+            </div>
+            <div class="check">
+              <input id="c2" type="checkbox" data-risk="8">
+              <label for="c2">
+                <strong>A real test returns a clean 2xx or documented redirect.</strong>
+                <span>Browser success text alone is not enough when the network request fails.</span>
+              </label>
+            </div>
+            <div class="check">
+              <input id="c3" type="checkbox" data-risk="9">
+              <label for="c3">
+                <strong>The recipient inbox or CRM actually receives the test.</strong>
+                <span>Form services can accept a POST while delivery still breaks downstream.</span>
+              </label>
+            </div>
+            <div class="check">
+              <input id="c4" type="checkbox" data-risk="7">
+              <label for="c4">
+                <strong>The success state is specific and visible.</strong>
+                <span>Users should see confirmation, expected response time, and next step.</span>
+              </label>
+            </div>
+            <div class="check">
+              <input id="c5" type="checkbox" data-risk="7">
+              <label for="c5">
+                <strong>The error state is testable.</strong>
+                <span>Failed network, invalid email, and required field errors should be understandable.</span>
+              </label>
+            </div>
+            <div class="check">
+              <input id="c6" type="checkbox" data-risk="6">
+              <label for="c6">
+                <strong>Required fields do not force fake data.</strong>
+                <span>Phone, budget, company size, or strategy-session fields can block honest leads.</span>
+              </label>
+            </div>
+            <div class="check">
+              <input id="c7" type="checkbox" data-risk="6">
+              <label for="c7">
+                <strong>The reply path is obvious.</strong>
+                <span>Email, name, message, and context reach a human who can answer.</span>
+              </label>
+            </div>
+            <div class="check">
+              <input id="c8" type="checkbox" data-risk="5">
+              <label for="c8">
+                <strong>Spam protection does not trap normal users.</strong>
+                <span>Honeypot, CAPTCHA, and consent fields should be reachable and clear.</span>
+              </label>
+            </div>
+            <div class="check">
+              <input id="c9" type="checkbox" data-risk="5">
+              <label for="c9">
+                <strong>Mobile layout is submit-safe.</strong>
+                <span>Labels, buttons, consent text, and success messages fit on a phone.</span>
+              </label>
+            </div>
+            <div class="check">
+              <input id="c10" type="checkbox" data-risk="7">
+              <label for="c10">
+                <strong>Analytics or logs can prove conversion health.</strong>
+                <span>At minimum, record submitted, failed, and delivered states separately.</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="inputs" aria-label="Payback estimate">
+            <label class="field">
+              <span>Average lead value USD</span>
+              <input id="leadValue" type="number" min="0" step="10" value="500">
+            </label>
+            <label class="field">
+              <span>Close rate percent</span>
+              <input id="closeRate" type="number" min="0" max="100" step="1" value="10">
+            </label>
+            <label class="field">
+              <span>Monthly form leads</span>
+              <input id="monthlyLeads" type="number" min="0" step="1" value="20">
+            </label>
+          </div>
+
+          <div class="actions">
+            <button type="button" id="copyReport">Copy report</button>
+            <button type="reset" class="secondary">Reset</button>
+            <a class="link-button secondary" href="contact-funnel-self-check.html">Full worksheet</a>
+          </div>
+          <p class="toast" id="toast" aria-live="polite"></p>
+        </form>
+
+        <aside class="panel">
+          <h2>What it means</h2>
+          <p class="sub" id="summaryText">
+            Check the boxes to generate a plain-English risk summary.
+          </p>
+          <div class="result-box">
+            <h3 id="paybackTitle">Estimated exposure: USD 0</h3>
+            <p id="paybackText">
+              This estimate multiplies unchecked risk by lead value, close rate,
+              and monthly volume. It is a triage number, not accounting advice.
+            </p>
+          </div>
+          <div class="notes" style="margin-top:18px">
+            <div class="note">
+              <strong>Most common false positive</strong>
+              A page says "sent" after JavaScript prevents default submit, but
+              no backend request is accepted.
+            </div>
+            <div class="note">
+              <strong>Most common false negative</strong>
+              Formspree/Web3Forms returns success, but the notification email,
+              CRM, or human follow-up route is not verified.
+            </div>
+            <div class="note">
+              <strong>Fastest manual check</strong>
+              Submit one honest test, capture the network status, screenshot
+              the visible state, and confirm delivery in the receiving system.
+            </div>
+          </div>
+          <p class="footer">
+            Built as a public, free companion to the AI Agent Security
+            Mini-Audit project. The tool sends nothing anywhere.
+          </p>
+        </aside>
+      </section>
+    </main>
+
+    <script>
+      const checks = [...document.querySelectorAll("[data-risk]")];
+      const scoreValue = document.getElementById("scoreValue");
+      const riskLabel = document.getElementById("riskLabel");
+      const scoreBar = document.getElementById("scoreBar");
+      const summaryText = document.getElementById("summaryText");
+      const paybackTitle = document.getElementById("paybackTitle");
+      const paybackText = document.getElementById("paybackText");
+      const copyReport = document.getElementById("copyReport");
+      const toast = document.getElementById("toast");
+      const form = document.getElementById("smokeForm");
+
+      function money(value) {
+        return new Intl.NumberFormat("en-US", {
+          style: "currency",
+          currency: "USD",
+          maximumFractionDigits: 0
+        }).format(Math.max(0, value || 0));
+      }
+
+      function currentState() {
+        const totalRisk = checks.reduce((sum, item) => sum + Number(item.dataset.risk), 0);
+        const missingRisk = checks
+          .filter((item) => !item.checked)
+          .reduce((sum, item) => sum + Number(item.dataset.risk), 0);
+        const score = Math.round((missingRisk / totalRisk) * 100);
+        const leadValue = Number(document.getElementById("leadValue").value || 0);
+        const closeRate = Number(document.getElementById("closeRate").value || 0) / 100;
+        const monthlyLeads = Number(document.getElementById("monthlyLeads").value || 0);
+        const exposure = Math.round(monthlyLeads * leadValue * closeRate * (score / 100));
+        const missingLabels = checks
+          .filter((item) => !item.checked)
+          .map((item) => item.nextElementSibling.querySelector("strong").textContent.replace(/\.$/, ""));
+        return { score, exposure, missingLabels };
+      }
+
+      function render() {
+        const { score, exposure, missingLabels } = currentState();
+        scoreValue.textContent = score;
+        scoreBar.style.setProperty("--score", score);
+
+        let label = "Low risk";
+        let color = "var(--green)";
+        if (score >= 66) {
+          label = "High risk";
+          color = "var(--red)";
+        } else if (score >= 34) {
+          label = "Medium risk";
+          color = "var(--amber)";
+        }
+
+        riskLabel.textContent = label;
+        riskLabel.style.color = color;
+        paybackTitle.textContent = `Estimated exposure: ${money(exposure)}`;
+
+        if (missingLabels.length === 0) {
+          summaryText.textContent = "Good shape. The smoke test found no unchecked lead-loss signals.";
+          paybackText.textContent = "Your remaining obvious exposure is low. Keep one recurring end-to-end test before major launches.";
+        } else {
+          summaryText.textContent = `${missingLabels.length} unchecked signal(s): ${missingLabels.slice(0, 3).join("; ")}${missingLabels.length > 3 ? "; ..." : "."}`;
+          paybackText.textContent = `At this input level, the unchecked risk maps to about ${money(exposure)} of monthly weighted exposure. Fix delivery proof before adding traffic.`;
+        }
+      }
+
+      function reportText() {
+        const { score, exposure, missingLabels } = currentState();
+        return [
+          "Contact Form Smoke Test",
+          `Risk score: ${score}/100`,
+          `Estimated monthly weighted exposure: ${money(exposure)}`,
+          "",
+          "Unchecked signals:",
+          ...(missingLabels.length ? missingLabels.map((item) => `- ${item}`) : ["- None"]),
+          "",
+          "Generated locally. No data was submitted."
+        ].join("\n");
+      }
+
+      checks.forEach((item) => item.addEventListener("change", render));
+      ["leadValue", "closeRate", "monthlyLeads"].forEach((id) => {
+        document.getElementById(id).addEventListener("input", render);
+      });
+
+      form.addEventListener("reset", () => {
+        setTimeout(render, 0);
+      });
+
+      copyReport.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(reportText());
+          toast.textContent = "Report copied";
+        } catch (error) {
+          toast.textContent = "Copy failed";
+        }
+      });
+
+      render();
+    </script>
+  </body>
+</html>
