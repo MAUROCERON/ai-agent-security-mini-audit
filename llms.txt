@@ -18,6 +18,7 @@ GitHub repository: https://github.com/MAUROCERON/ai-agent-security-mini-audit
 - USD 75 contact funnel QA: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-qa.html
 - Contact funnel sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-sample-report.html
 - USD 100 broken lead form rescue: https://mauroceron.github.io/ai-agent-security-mini-audit/broken-form-rescue.html
+- USD 100 Base44 contact form rescue: https://mauroceron.github.io/ai-agent-security-mini-audit/base44-form-rescue.html
 - Broken lead form rescue sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/broken-form-rescue-sample-report.html
 - Voice/chat agent QA: https://mauroceron.github.io/ai-agent-security-mini-audit/voice-chat-agent-qa.html
 - Voice/chat sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/voice-chat-sample-report.html
@@ -42,6 +43,8 @@ The free contact funnel risk self-check scores whether a public form has enough 
 The contact funnel sample report shows the expected USD 75 deliverable shape for a fictional AI agency form: pass/fail verdict, evidence table, lost-lead risk, first fix, retest steps and a client-safe note.
 
 The USD 100 broken lead form rescue brief is for a public lead form that already appears broken: disabled API, placeholder endpoint, vendor rejection, webhook/API failure, no backend delivery or client-side-only success. It provides reproduction evidence, likely root cause, first fix plan and one retest.
+
+The USD 100 Base44 contact form rescue brief is for Base44-generated sites where public contact, demo, intake or callback forms fail with blocked backend functions, missing public permissions, disabled integrations or no delivery proof.
 
 The broken lead form rescue sample report shows the anonymized deliverable shape: executive verdict, payback test, endpoint evidence, likely root cause, first fix and retest plan.
 
