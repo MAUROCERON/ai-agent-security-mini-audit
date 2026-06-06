@@ -10,6 +10,7 @@ Public URLs:
 - Sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/sample-report.html
 - Intake questions: https://mauroceron.github.io/ai-agent-security-mini-audit/intake.html
 - Agency handoff QA: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-handoff-qa.html
+- LLM crawler summary: https://mauroceron.github.io/ai-agent-security-mini-audit/llms.txt
 
 ## What Works Without Login
 
@@ -34,7 +35,12 @@ The static self-check and landing-page source in this repository are available u
 - `sample-report.html`: public sample deliverable.
 - `intake.html`: public intake questions for buyers.
 - `agency-handoff-qa.html`: agency-specific handoff QA sales page.
+- `llms.txt`: compact machine-readable summary for AI search/crawlers.
 - `thank-you.html`: buyer instructions after payment.
+
+## For Agencies
+
+The agency handoff QA page frames the same USD 59 mini-audit as a pre-delivery check for client workflows. It is intended for agencies shipping AI agents, n8n/Make/Zapier automations, browser workflows, CRM updates, support agents or lead qualification systems.
 - `assets/ai-agent-security-cover.png`: product visual.
 
 ## Payment buttons
