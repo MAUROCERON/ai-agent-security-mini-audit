@@ -681,12 +681,17 @@ th {
   }
 
   .tool-hero h1 {
-    font-size: clamp(2.35rem, 11vw, 3rem);
+    font-size: clamp(2.18rem, 10vw, 2.8rem);
     line-height: 0.95;
+    overflow-wrap: anywhere;
   }
 
   .result-panel {
     position: static;
+  }
+
+  .check-heading span {
+    font-size: 0.78rem;
   }
 
   .check-heading,
