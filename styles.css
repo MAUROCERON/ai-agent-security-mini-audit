@@ -264,6 +264,54 @@ h2 {
   line-height: 1.45;
 }
 
+.decision-band {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+  margin-bottom: 28px;
+}
+
+.decision-band div {
+  border: 2px solid var(--ink);
+  background: rgba(255, 255, 255, 0.32);
+  padding: 24px;
+}
+
+.decision-band div:first-child {
+  background: rgba(199, 239, 79, 0.22);
+}
+
+.decision-band p,
+.value-grid p {
+  margin: 14px 0 0;
+  color: rgba(22, 22, 22, 0.74);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+
+.value-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  margin-bottom: 28px;
+  border: 2px solid var(--ink);
+  background: var(--coal);
+  color: var(--paper);
+}
+
+.value-grid div {
+  padding: 24px;
+  border-right: 1px solid rgba(245, 239, 227, 0.28);
+}
+
+.value-grid div:last-child {
+  border-right: 0;
+}
+
+.value-grid p {
+  color: rgba(245, 239, 227, 0.75);
+}
+
 .proof-band {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -587,6 +635,16 @@ th {
   color: var(--ink);
 }
 
+.paid-fit-note {
+  margin: 12px 0 0;
+  border-left: 4px solid var(--teal);
+  background: rgba(255, 255, 255, 0.34);
+  padding: 10px 12px;
+  color: rgba(22, 22, 22, 0.74);
+  font-size: 0.94rem;
+  line-height: 1.45;
+}
+
 .copy-button:hover,
 .copy-button:focus-visible,
 .result-panel form button:hover,
@@ -650,6 +708,8 @@ th {
 
   .offer-grid,
   .proof-band,
+  .decision-band,
+  .value-grid,
   .trust-strip,
   .check-layout {
     grid-template-columns: 1fr;
@@ -662,12 +722,14 @@ th {
   }
 
   .proof-band div,
+  .value-grid div,
   .trust-strip div {
     border-right: 0;
     border-bottom: 1px solid var(--line);
   }
 
   .proof-band div:last-child,
+  .value-grid div:last-child,
   .trust-strip div:last-child {
     border-bottom: 0;
   }
