@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample Contact Funnel QA Report</title>
+    <meta
+      name="description"
+      content="Sample deliverable for the USD 75 Contact Funnel QA check for AI agency forms, endpoints, webhooks and lead routing."
+    >
+    <meta property="og:title" content="Sample Contact Funnel QA Report">
+    <meta property="og:description" content="See the pass/fail verdict, evidence table, lost-lead risk and retest steps included in the USD 75 Contact Funnel QA service.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-sample-report.html">
+    <link rel="canonical" href="https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-sample-report.html">
+    <link rel="stylesheet" href="styles.css?v=11">
+  </head>
+  <body>
+    <main class="page-shell document-shell">
+      <nav class="top-nav" aria-label="Page links">
+        <a href="index.html">Main offer</a>
+        <a href="contact-funnel-qa.html">Buy funnel QA</a>
+        <a href="agency-bundle.html">Agency bundle</a>
+        <a href="sample-report.html">Security sample</a>
+      </nav>
+
+      <article class="doc-panel">
+        <p class="kicker">Sample deliverable</p>
+        <h1>
+          <span>Contact Funnel</span>
+          <span>QA Report</span>
+        </h1>
+        <p class="lede">
+          Fictional example for an AI automation agency contact form. This is
+          the shape of the USD 75 deliverable: one public funnel, evidence,
+          lost-lead risk and exact retest steps.
+        </p>
+
+        <section>
+          <h2>Verdict</h2>
+          <p>
+            Fail before paid traffic. The visible page says the form submitted,
+            but the backend returns a server error, so the buyer-facing success
+            state is not reliable evidence that a lead reached the agency.
+          </p>
+        </section>
+
+        <section>
+          <h2>Evidence table</h2>
+          <div class="table-wrap">
+            <table class="stack-table">
+              <thead>
+                <tr>
+                  <th>Check</th>
+                  <th>Observed evidence</th>
+                  <th>Result</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Check">Public URL</td>
+                  <td data-label="Observed evidence"><code>https://example-ai-agency.test/contact</code> loaded a contact form with name, email and message fields.</td>
+                  <td data-label="Result">Pass</td>
+                </tr>
+                <tr>
+                  <td data-label="Check">Required fields</td>
+                  <td data-label="Observed evidence">Email and message were required. Phone was optional and left blank.</td>
+                  <td data-label="Result">Pass</td>
+                </tr>
+                <tr>
+                  <td data-label="Check">Backend endpoint</td>
+                  <td data-label="Observed evidence">POST to <code>/api/contact</code> returned HTTP 500 with <code>Internal Server Error</code>.</td>
+                  <td data-label="Result">Fail</td>
+                </tr>
+                <tr>
+                  <td data-label="Check">Visible page state</td>
+                  <td data-label="Observed evidence">The page still displayed <code>Thanks, we will contact you soon</code> after the failed backend response.</td>
+                  <td data-label="Result">Fail</td>
+                </tr>
+                <tr>
+                  <td data-label="Check">Analytics signal</td>
+                  <td data-label="Observed evidence">A tracker request returned HTTP 202, but this was not a lead-delivery endpoint.</td>
+                  <td data-label="Result">Warning</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>Lost-lead risk</h2>
+          <ul class="plain-list">
+            <li>High: the agency may believe inquiries are arriving when the backend is failing.</li>
+            <li>High: paid traffic and cold outreach could produce invisible lost leads.</li>
+            <li>Medium: analytics events can create a false positive in reports.</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>First fix</h2>
+          <p>
+            Change the submit handler so the success state only appears after
+            the real backend endpoint returns a 2xx response. On non-2xx
+            responses, show a visible error, log the response body server-side
+            and keep the form data in the browser so the visitor can retry.
+          </p>
+        </section>
+
+        <section>
+          <h2>Retest steps</h2>
+          <ol>
+            <li>Submit a test lead with phone blank if phone is optional.</li>
+            <li>Confirm the contact endpoint returns HTTP 200 or HTTP 201.</li>
+            <li>Confirm the success message appears only after that 2xx response.</li>
+            <li>Confirm the lead arrives in the expected destination: email, CRM, Slack, Sheet, Airtable, Notion or webhook log.</li>
+            <li>Submit one intentionally invalid email and confirm validation blocks it before any backend send.</li>
+          </ol>
+        </section>
+
+        <section>
+          <h2>Client-safe note</h2>
+          <p>
+            We found and fixed a form-delivery issue before launch. The contact
+            funnel now waits for backend confirmation before showing success,
+            and failed submissions produce a retryable error instead of a false
+            positive. This reduces the risk of silent lost leads during launch.
+          </p>
+        </section>
+
+        <section>
+          <h2>Buy this check</h2>
+          <p>
+            The real USD 75 check covers one public funnel and includes one
+            retest pass after the first fix within 7 days.
+          </p>
+          <p>
+            <a class="solid-link" href="contact-funnel-qa.html">Open Contact Funnel QA</a>
+          </p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
