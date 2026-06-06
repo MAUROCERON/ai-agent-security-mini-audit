@@ -14,7 +14,7 @@
     <meta property="og:url" content="https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-self-check.html">
     <meta name="twitter:card" content="summary">
     <link rel="canonical" href="https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-self-check.html">
-    <link rel="stylesheet" href="styles.css?v=12">
+    <link rel="stylesheet" href="styles.css?v=13">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -167,6 +167,25 @@
               <li>One missed lead would cost more than USD 75.</li>
             </ul>
           </div>
+          <div class="payback-gate" aria-label="Payback check">
+            <p class="offer-label">Payback check</p>
+            <label>
+              Average value of one qualified lead
+              <input type="number" id="leadValue" min="0" step="25" value="500" inputmode="decimal">
+            </label>
+            <label>
+              Conservative close rate
+              <input type="number" id="closeRate" min="0" max="100" step="1" value="20" inputmode="decimal">
+            </label>
+            <p>
+              Expected value of one recovered lead:
+              <strong id="expectedLeadValue">USD 100</strong>
+            </p>
+            <p id="paybackVerdict">
+              Paid QA can pay for itself if this funnel can lose even one
+              qualified lead.
+            </p>
+          </div>
           <div class="priority-list" id="priorityList" aria-label="Top priorities"></div>
           <button class="copy-button" type="button" id="copyBrief">Copy funnel risk brief</button>
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" id="checkoutForm">
@@ -206,6 +225,20 @@
       const checkoutForm = document.getElementById("checkoutForm");
       const checkoutButton = document.getElementById("checkoutButton");
       const paypalCustom = document.getElementById("paypalCustom");
+      const leadValueInput = document.getElementById("leadValue");
+      const closeRateInput = document.getElementById("closeRate");
+      const expectedLeadValueEl = document.getElementById("expectedLeadValue");
+      const paybackVerdictEl = document.getElementById("paybackVerdict");
+
+      function formatUsd(value) {
+        return `USD ${Math.round(value).toLocaleString("en-US")}`;
+      }
+
+      function getExpectedLeadValue() {
+        const leadValue = Math.max(0, Number(leadValueInput.value) || 0);
+        const closeRate = Math.min(100, Math.max(0, Number(closeRateInput.value) || 0));
+        return leadValue * (closeRate / 100);
+      }
 
       function getState() {
         const selected = inputs
@@ -227,6 +260,7 @@
         const pct = Math.min(100, Math.round((score / 21) * 100));
         scoreEl.textContent = score;
         meterEl.style.width = `${pct}%`;
+        const expectedLeadValue = getExpectedLeadValue();
 
         let level = "Low visible risk";
         let summary = "No lost-lead signals selected yet. Keep a lightweight monthly test and confirm the lead lands where the team expects it.";
@@ -281,6 +315,14 @@
         levelEl.textContent = level;
         summaryEl.textContent = summary;
         paidFitEl.textContent = paidFit;
+        expectedLeadValueEl.textContent = formatUsd(expectedLeadValue);
+        if (expectedLeadValue >= 75 && score >= 5) {
+          paybackVerdictEl.textContent = "The paid check has a clear payback case: one recovered qualified lead is worth more than the fee.";
+        } else if (expectedLeadValue >= 75) {
+          paybackVerdictEl.textContent = "The economics can work, but the visible risk is low. Run an internal test before paying.";
+        } else {
+          paybackVerdictEl.textContent = "Do not buy yet unless this is for client handoff proof; the conservative lead value is below the fee.";
+        }
         actionTitleEl.textContent = actionTitle;
         actionCopyEl.textContent = actionCopy;
         checkoutButton.textContent = checkoutLabel;
@@ -311,6 +353,8 @@
           `Level: ${levelEl.textContent}`,
           `Recommendation: ${actionTitleEl.textContent}`,
           `Why: ${actionCopyEl.textContent}`,
+          `Expected value of one recovered lead: ${expectedLeadValueEl.textContent}`,
+          `Payback verdict: ${paybackVerdictEl.textContent}`,
           "Selected signals:",
           ...(selected.length ? selected.map((item) => `- ${item.label}`) : ["- None selected"]),
           "",
@@ -331,6 +375,8 @@
       });
 
       inputs.forEach((input) => input.addEventListener("change", render));
+      leadValueInput.addEventListener("input", render);
+      closeRateInput.addEventListener("input", render);
       render();
     </script>
   </body>
