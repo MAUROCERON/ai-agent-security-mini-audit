@@ -239,8 +239,8 @@ h2 {
 
 @media (max-width: 820px) {
   .page-shell {
-    width: calc(100% - 32px);
-    max-width: 420px;
+    width: calc(100vw - 56px);
+    max-width: 360px;
     overflow: hidden;
   }
 
@@ -282,7 +282,7 @@ h2 {
   }
 
   .signal-row span {
-    flex: 1 1 140px;
+    flex: 1 1 100%;
     text-align: center;
   }
 
