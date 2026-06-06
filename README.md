@@ -3,6 +3,7 @@
 This is a static landing page for direct sales:
 
 - `index.html`: offer and PayPal buttons.
+- `self-check.html`: free AI-agent risk self-check with paid audit CTA.
 - `sample-report.html`: public sample deliverable.
 - `intake.html`: public intake questions for buyers.
 - `thank-you.html`: buyer instructions after payment.
