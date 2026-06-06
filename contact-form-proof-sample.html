@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample Contact Form Proof Check</title>
+    <meta
+      name="description"
+      content="Sample USD 29 Contact Form Proof Check deliverable for one public lead form: evidence table, verdict, next step, and upgrade recommendation."
+    >
+    <meta property="og:title" content="Sample Contact Form Proof Check">
+    <meta property="og:description" content="See what the USD 29 proof check delivers before buying: endpoint evidence, visible state, verdict, and next-step recommendation.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-proof-sample.html">
+    <link rel="canonical" href="https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-proof-sample.html">
+    <link rel="stylesheet" href="styles.css?v=14">
+  </head>
+  <body>
+    <main class="page-shell document-shell">
+      <nav class="top-nav" aria-label="Page links">
+        <a href="contact-form-proof.html">Buy proof check</a>
+        <a href="contact-form-smoke-test.html">Free smoke test</a>
+        <a href="contact-funnel-qa.html">Full funnel QA</a>
+        <a href="broken-form-rescue.html">Broken form rescue</a>
+        <a href="index.html">Main offer</a>
+      </nav>
+
+      <article class="doc-panel">
+        <p class="kicker">Sample deliverable</p>
+        <h1>
+          <span>Contact Form Proof Check</span>
+          <span>Sample Note</span>
+        </h1>
+        <p class="lede">
+          This is a fictional example of the USD 29 deliverable. The real note
+          is short by design: enough evidence to decide whether the form is
+          probably usable, needs full QA, or looks broken.
+        </p>
+
+        <section>
+          <h2>Verdict</h2>
+          <p>
+            Needs full QA before campaign traffic. The public form accepted a
+            safe test payload at the browser level, but the visible success
+            state was client-side only and no delivery destination was proven.
+          </p>
+        </section>
+
+        <section>
+          <h2>Evidence Table</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Check</th>
+                  <th>Evidence</th>
+                  <th>Meaning</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Public URL</td>
+                  <td>Consultation page loaded without login or private access.</td>
+                  <td>Testable within public scope.</td>
+                </tr>
+                <tr>
+                  <td>Required fields</td>
+                  <td>Name, email and message were required. Phone was optional.</td>
+                  <td>No fake phone number was needed.</td>
+                </tr>
+                <tr>
+                  <td>Submit behavior</td>
+                  <td>Button click changed the page to "message sent".</td>
+                  <td>Visitor sees success.</td>
+                </tr>
+                <tr>
+                  <td>Network evidence</td>
+                  <td>No non-analytics POST was captured during the visible success state.</td>
+                  <td>High risk of client-side-only success.</td>
+                </tr>
+                <tr>
+                  <td>Delivery proof</td>
+                  <td>No inbox, CRM, webhook, or owner confirmation was available.</td>
+                  <td>Lead delivery is unproven, not confirmed working.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
+          <h2>Recommendation</h2>
+          <p>
+            Do not send paid traffic until one end-to-end delivery proof exists.
+            If this form feeds consultation calls, demo requests, paid ads or a
+            client handoff, upgrade to the full USD 75 QA. If it is a low-value
+            personal contact page, fix the submit handler and rerun the free
+            smoke test instead.
+          </p>
+        </section>
+
+        <section>
+          <h2>Client-Safe Note</h2>
+          <p>
+            "The public form currently gives users a success message, but the
+            test did not capture proof that a lead reached a backend, inbox or
+            CRM. Before campaign launch, confirm one real submission through
+            the final receiving system and keep a screenshot of the delivery
+            proof."
+          </p>
+        </section>
+
+        <section>
+          <h2>Why this is worth USD 29</h2>
+          <p>
+            The buyer gets a clear answer without committing to a larger audit:
+            either keep using the form, fix a narrow issue, or justify a bigger
+            QA/rescue pass with evidence. The note is intentionally small so
+            the price stays easy to accept.
+          </p>
+        </section>
+      </article>
+    </main>
+  </body>
+</html>
