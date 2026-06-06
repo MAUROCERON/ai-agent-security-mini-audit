@@ -527,6 +527,11 @@ td {
   vertical-align: top;
 }
 
+code {
+  font-family: Consolas, "Courier New", monospace;
+  overflow-wrap: anywhere;
+}
+
 th {
   font-family: Bahnschrift, Candara, sans-serif;
   text-transform: uppercase;
@@ -935,6 +940,45 @@ th {
 
   .doc-panel {
     padding: 22px;
+  }
+
+  .stack-table,
+  .stack-table thead,
+  .stack-table tbody,
+  .stack-table tr,
+  .stack-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .stack-table thead {
+    display: none;
+  }
+
+  .stack-table tr {
+    margin-bottom: 14px;
+    border: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.24);
+  }
+
+  .stack-table td {
+    border: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .stack-table td:last-child {
+    border-bottom: 0;
+  }
+
+  .stack-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 5px;
+    color: var(--clay);
+    font-family: Bahnschrift, Candara, sans-serif;
+    font-size: 0.74rem;
+    font-weight: 800;
+    text-transform: uppercase;
   }
 
   .tool-hero h1 {
