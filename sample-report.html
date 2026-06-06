@@ -89,6 +89,42 @@
         </section>
 
         <section>
+          <h2>Standards mapping</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Finding</th>
+                  <th>Mapping</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>A1</td>
+                  <td>ASI01 Agent Goal Hijack; LLM01 Prompt Injection; NIST pre-deployment testing.</td>
+                </tr>
+                <tr>
+                  <td>A2</td>
+                  <td>ASI03 Identity and Privilege Abuse; LLM06 Excessive Agency.</td>
+                </tr>
+                <tr>
+                  <td>A3</td>
+                  <td>ASI09 Human-Agent Trust Exploitation; LLM05 Improper Output Handling.</td>
+                </tr>
+                <tr>
+                  <td>A4</td>
+                  <td>ASI03 Identity and Privilege Abuse; LLM02 Sensitive Information Disclosure.</td>
+                </tr>
+                <tr>
+                  <td>A5</td>
+                  <td>LLM02 Sensitive Information Disclosure; NIST incident traceability.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section>
           <h2>Priority fix plan</h2>
           <ol>
             <li>Before pilot: create a dedicated CRM role with read-ticket and draft-reply permissions only.</li>
@@ -106,6 +142,32 @@
             <li>Retest with one malicious ticket, one normal ticket and one ticket containing customer PII.</li>
             <li>Share the reusable security note with the customer success or sales team before demo calls.</li>
           </ol>
+        </section>
+
+        <section>
+          <h2>Copy-paste remediation tickets</h2>
+          <h3>Ticket 1: block content-driven tool instructions</h3>
+          <p>
+            Acceptance criteria: the agent refuses tool instructions found
+            inside ticket body text and logs the refusal reason. Retest with a
+            malicious ticket that asks for contact export.
+          </p>
+          <h3>Ticket 2: replace shared CRM session</h3>
+          <p>
+            Acceptance criteria: the agent account can read tickets and draft
+            replies, but cannot export contacts or change permissions. Retest
+            blocked actions after the role change.
+          </p>
+        </section>
+
+        <section>
+          <h2>Why this pays back</h2>
+          <ul class="plain-list">
+            <li>Prevents a customer ticket from driving unauthorized CRM actions.</li>
+            <li>Gives sales or customer success a short, factual security answer.</li>
+            <li>Prioritizes the first two fixes before lower-risk polish work.</li>
+            <li>Replaces full human browser access with least-privilege workflow access.</li>
+          </ul>
         </section>
 
         <section>
