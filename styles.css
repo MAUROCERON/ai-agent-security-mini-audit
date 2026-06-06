@@ -364,6 +364,23 @@ h2 {
   font-weight: 800;
 }
 
+.ghost-link {
+  background: transparent;
+  color: var(--ink);
+}
+
+.next-steps {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding-left: 22px;
+}
+
+.next-steps li {
+  color: rgba(22, 22, 22, 0.76);
+  line-height: 1.55;
+}
+
 .document-shell {
   width: min(920px, calc(100% - 32px));
 }
