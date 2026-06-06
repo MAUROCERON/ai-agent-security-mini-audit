@@ -169,6 +169,10 @@
             <input type="hidden" name="return" value="https://mauroceron.github.io/ai-agent-security-mini-audit/thank-you.html">
             <button type="submit">Get the USD 59 mini-audit</button>
           </form>
+          <p class="paid-fit-note" id="paidFitNote">
+            Paid review is usually worth it if the agent can take actions,
+            touch customer data or is close to launch.
+          </p>
           <a class="text-link" href="sample-report.html">View sample deliverable</a>
         </aside>
       </section>
@@ -182,6 +186,7 @@
       const summaryEl = document.getElementById("riskSummary");
       const priorityEl = document.getElementById("priorityList");
       const copyButton = document.getElementById("copyBrief");
+      const paidFitEl = document.getElementById("paidFitNote");
 
       function getState() {
         const selected = inputs
@@ -206,20 +211,25 @@
 
         let level = "Low visible risk";
         let summary = "No high-risk signals selected yet. Keep the agent scoped, logged and approval-gated before launch.";
+        let paidFit = "Do not buy the paid review for a toy demo. Use the free checklist unless this workflow is close to launch or touches real systems.";
 
         if (score >= 16) {
           level = "Critical pre-launch risk";
           summary = "This workflow should get a hard boundary review before it is allowed to act on production systems.";
+          paidFit = "Paid review is strongly justified before launch because multiple high-risk controls need evidence and retesting.";
         } else if (score >= 10) {
           level = "High risk";
           summary = "The agent has enough authority or exposure to justify a focused audit before launch.";
+          paidFit = "Paid review is likely worth it if this workflow is entering pilot, demo or production.";
         } else if (score >= 5) {
           level = "Medium risk";
           summary = "The workflow has real risk signals. Tighten permissions, approvals and logging before expanding scope.";
+          paidFit = "Paid review may be worth it if the workflow touches customer data, authenticated browsers or business records.";
         }
 
         levelEl.textContent = level;
         summaryEl.textContent = summary;
+        paidFitEl.textContent = paidFit;
         priorityEl.innerHTML = "";
 
         selected.slice(0, 3).forEach((item, index) => {
