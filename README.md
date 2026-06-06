@@ -5,6 +5,7 @@ Static, no-login web tool for checking visible launch risk in one AI-agent or br
 Public URLs:
 
 - Free self-check: https://mauroceron.github.io/ai-agent-security-mini-audit/self-check.html
+- Public checklist: https://mauroceron.github.io/ai-agent-security-mini-audit/ai-agent-security-checklist.html
 - Offer page: https://mauroceron.github.io/ai-agent-security-mini-audit/
 - Sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/sample-report.html
 - Intake questions: https://mauroceron.github.io/ai-agent-security-mini-audit/intake.html
@@ -28,6 +29,7 @@ The static self-check and landing-page source in this repository are available u
 
 - `index.html`: offer and PayPal buttons.
 - `self-check.html`: free AI-agent risk self-check with paid audit CTA.
+- `ai-agent-security-checklist.html`: public checklist article for organic discovery.
 - `sample-report.html`: public sample deliverable.
 - `intake.html`: public intake questions for buyers.
 - `thank-you.html`: buyer instructions after payment.
