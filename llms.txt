@@ -54,7 +54,7 @@ The USD 50 two-form proof pack checks two public forms for the same brand, launc
 
 The agency form proof check is a USD 19 starter proof note, USD 29 one-form proof check and USD 50 two-form offer positioned for Webflow, WordPress, no-code, AI automation, CRM, booking and lead-routing agencies. The USD 19 starter covers one public form's visible submit result, friction notes and buy-more verdict. USD 29 adds safe endpoint/status notes when exposed and developer-ready issue text. USD 50 covers two public forms and one first-fix retest. It is meant as a pre-handoff QA or small resellable line item before client launch.
 
-The Webflow form handoff QA is the same USD 29 one-form and USD 50 two-form proof-check offer written specifically for Webflow, Framer, WordPress and no-code agencies. It focuses on Webflow Forms, embedded form backends, visible success states, analytics-only false positives, endpoint/status evidence and client-safe handoff notes.
+The Webflow form handoff QA is the same USD 19 starter proof note, USD 29 one-form proof check and USD 50 two-form proof-check offer written specifically for Webflow, Framer, WordPress and no-code agencies. The USD 19 starter covers one public form's visible result, friction notes and buy-more verdict. USD 29 adds endpoint/status evidence when exposed and developer-ready issue text. USD 50 covers two public forms and one first-fix retest reply. It focuses on Webflow Forms, embedded form backends, visible success states, analytics-only false positives, endpoint/status evidence and client-safe handoff notes.
 
 The agency form proof sample shows the expected handoff-ready deliverable shape: compact verdict, evidence table, developer ticket text, client-safe note and buy-more verdict.
 
