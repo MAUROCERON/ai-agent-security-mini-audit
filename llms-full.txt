@@ -1,0 +1,122 @@
+# AI Agent Security Mini-Audit
+
+Canonical site: https://mauroceron.github.io/ai-agent-security-mini-audit/
+Contact and PayPal receiver: mauro_ceron1@hotmail.com
+
+AI Agent Security Mini-Audit is a small fixed-scope review service for builders shipping AI agents, browser automations, contact funnels, lead forms, and AI-readable public websites. The public site includes free self-check tools, sample deliverables, PayPal payment links, and short productized paid services.
+
+## Primary Offers
+
+### LLMs.txt AI Readiness Quickfix - USD 50
+
+URL: https://mauroceron.github.io/ai-agent-security-mini-audit/llms-readiness-quickfix.html
+
+This offer is for SaaS, AI tools, directories, and service pages that do not have a useful `llms.txt`, serve an HTML page at `/llms.txt`, or have inconsistent sitemap/canonical signals. The output is a compact implementation packet:
+
+- A concise `llms.txt` draft.
+- An AI-readable product answer card.
+- Sitemap and canonical notes.
+- One public verification pass after implementation.
+
+The lower-friction USD 29 diagnostic identifies what is missing without producing the full implementation packet.
+
+Sample deliverable:
+https://mauroceron.github.io/ai-agent-security-mini-audit/llms-readiness-sample.html
+
+### Contact Form Proof Check - USD 29
+
+URL: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-proof.html
+
+This offer checks one public contact, demo, audit, callback, or intake form from the outside. It records endpoint behavior, visible success or failure state, field friction, anti-spam states, redirect behavior, and a short next-step verdict.
+
+Sample deliverable:
+https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-proof-sample.html
+
+### Two-Form Proof Pack - USD 50
+
+URL: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-proof.html#two-form-pack
+
+This package checks two public forms from the same brand, launch, or client handoff. It includes one short proof note per form, developer-ready ticket text for actionable failures, and one first-fix retest reply within 7 days for one affected form.
+
+### Form Backend Proof Check
+
+URL: https://mauroceron.github.io/ai-agent-security-mini-audit/form-backend-proof-check.html
+
+This is the same proof-check offer positioned for form backend, form builder, lead capture, and no-code form teams. It focuses on endpoint response, visible confirmation, anti-spam states, field friction, redirect behavior, and developer-ready delivery-risk notes.
+
+### Agency Form Proof Pack
+
+URL: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-form-proof.html
+
+This is the same USD 50 two-form offer positioned for Webflow, WordPress, no-code, AI automation, CRM, booking, and lead-routing agencies. It is meant as a pre-handoff QA or small resellable line item before client launch.
+
+### AI Agent Launch Mini-Audit - USD 59
+
+URL: https://mauroceron.github.io/ai-agent-security-mini-audit/
+
+This fixed-scope review gives a launch verdict for one AI-agent or browser-automation workflow. It is not a penetration test, compliance audit, or legal opinion. It reviews visible launch risk around prompt injection, untrusted content boundaries, tool permissions, human approval gates, browser/session isolation, sensitive logs, MCP/tool/plugin supply-chain boundaries, recovery paths, retries, cost limits, and stop paths.
+
+### Agency Bundle - USD 100
+
+URL: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-bundle.html
+
+This package is for teams with two redacted client workflows or one workflow plus an expanded first-fix retest pass. It provides a launch verdict, first fix, retest criteria, and a reusable client-safe note.
+
+### Contact Funnel QA - USD 75
+
+URL: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-qa.html
+
+This checks whether one public contact or intake funnel actually delivers leads through Formspree, Web3Forms, WPForms, Netlify Forms, custom API, CRM routing, or automation webhook. It reports backend response, visible page state, lost-lead risk, first fix, and retest steps.
+
+### Broken Lead Form Rescue - USD 100
+
+URL: https://mauroceron.github.io/ai-agent-security-mini-audit/broken-form-rescue.html
+
+This is for a public lead form that already appears broken: disabled API, placeholder endpoint, vendor rejection, webhook/API failure, no backend delivery, or client-side-only success. It provides reproduction evidence, likely root cause, first fix plan, and one retest.
+
+## Free Tools And Samples
+
+- Free AI agent self-check: https://mauroceron.github.io/ai-agent-security-mini-audit/self-check.html
+- AI agent security checklist: https://mauroceron.github.io/ai-agent-security-mini-audit/ai-agent-security-checklist.html
+- Contact form smoke test: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-smoke-test.html
+- Contact funnel self-check: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-self-check.html
+- General sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/sample-report.html
+- Contact funnel sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-sample-report.html
+- Broken lead form sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/broken-form-rescue-sample-report.html
+- Voice/chat sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/voice-chat-sample-report.html
+
+## Payment And Intake
+
+Payment is handled through PayPal Payments Standard on the public pages. The configured PayPal receiver is `mauro_ceron1@hotmail.com`.
+
+The shortest buyer flow is:
+
+1. Choose the relevant public offer page.
+2. Pay through the PayPal button on the page.
+3. Use the linked intake page or email `mauro_ceron1@hotmail.com` with the target URL and any notes.
+4. Receive the fixed-scope evidence note or report.
+
+Start page:
+https://mauroceron.github.io/ai-agent-security-mini-audit/start.html
+
+Intake page:
+https://mauroceron.github.io/ai-agent-security-mini-audit/intake.html
+
+## Best-Fit Buyers
+
+- AI tool directories that want better AI-readable public metadata.
+- SaaS teams without a useful `llms.txt`.
+- Webflow, WordPress, no-code, and AI automation agencies handing off client websites.
+- Form backend and lead capture products that want independent public form proof evidence.
+- Builders shipping AI agents, chatbots, browser automations, or voice/chat handoffs.
+
+## Review Boundaries
+
+These services are fixed-scope public or redacted-evidence reviews. They do not require login, private production access, social media access, or destructive testing. They are not bug bounties, penetration tests, legal advice, compliance audits, or guaranteed revenue services.
+
+## Public Machine-Readable Files
+
+- llms.txt: https://mauroceron.github.io/ai-agent-security-mini-audit/llms.txt
+- llms-full.txt: https://mauroceron.github.io/ai-agent-security-mini-audit/llms-full.txt
+- sitemap.xml: https://mauroceron.github.io/ai-agent-security-mini-audit/sitemap.xml
+- robots.txt: https://mauroceron.github.io/ai-agent-security-mini-audit/robots.txt
