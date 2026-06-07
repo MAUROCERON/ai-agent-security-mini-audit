@@ -54,7 +54,7 @@ This is a USD 19 starter proof note, USD 29 one-form proof check, and USD 50 two
 
 URL: https://mauroceron.github.io/ai-agent-security-mini-audit/webflow-form-handoff-qa.html
 
-This is the same USD 29 one-form proof check and USD 50 two-form offer written specifically for Webflow, Framer, WordPress, and no-code agencies. It checks public launch forms from the outside, captures visible submit state, notes Webflow Forms or embedded backend evidence when available, flags analytics-only false positives, and returns a client-safe handoff note.
+This is the same USD 19 starter proof note, USD 29 one-form proof check, and USD 50 two-form offer written specifically for Webflow, Framer, WordPress, and no-code agencies. The USD 19 starter covers one public form's visible result, friction notes, and buy-more verdict. USD 29 adds endpoint/status evidence when exposed and developer-ready issue text. USD 50 covers two public forms and one first-fix retest reply. It checks public launch forms from the outside, captures visible submit state, notes Webflow Forms or embedded backend evidence when available, flags analytics-only false positives, and returns a client-safe handoff note.
 
 Sample deliverable:
 https://mauroceron.github.io/ai-agent-security-mini-audit/agency-form-proof-sample.html
