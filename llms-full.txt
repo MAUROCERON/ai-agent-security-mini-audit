@@ -44,11 +44,11 @@ URL: https://mauroceron.github.io/ai-agent-security-mini-audit/form-backend-proo
 
 This is the same proof-check offer positioned for form backend, form builder, lead capture, and no-code form teams. It focuses on endpoint response, visible confirmation, anti-spam states, field friction, redirect behavior, and developer-ready delivery-risk notes.
 
-### Agency Form Proof Pack
+### Agency Form Proof Check
 
 URL: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-form-proof.html
 
-This is the same USD 50 two-form offer positioned for Webflow, WordPress, no-code, AI automation, CRM, booking, and lead-routing agencies. It is meant as a pre-handoff QA or small resellable line item before client launch.
+This is the same USD 29 one-form proof check and USD 50 two-form offer positioned for Webflow, WordPress, no-code, AI automation, CRM, booking, and lead-routing agencies. It is meant as a pre-handoff QA or small resellable line item before client launch.
 
 ### AI Agent Launch Mini-Audit - USD 59
 
