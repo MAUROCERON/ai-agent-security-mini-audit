@@ -50,6 +50,9 @@ URL: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-form-proof
 
 This is the same USD 29 one-form proof check and USD 50 two-form offer positioned for Webflow, WordPress, no-code, AI automation, CRM, booking, and lead-routing agencies. It is meant as a pre-handoff QA or small resellable line item before client launch.
 
+Sample deliverable:
+https://mauroceron.github.io/ai-agent-security-mini-audit/agency-form-proof-sample.html
+
 ### AI Agent Launch Mini-Audit - USD 59
 
 URL: https://mauroceron.github.io/ai-agent-security-mini-audit/
