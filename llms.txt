@@ -21,6 +21,7 @@ GitHub repository: https://github.com/MAUROCERON/ai-agent-security-mini-audit
 - Form backend proof check: https://mauroceron.github.io/ai-agent-security-mini-audit/form-backend-proof-check.html
 - LLMs.txt AI readiness quickfix: https://mauroceron.github.io/ai-agent-security-mini-audit/llms-readiness-quickfix.html
 - LLMs.txt readiness sample: https://mauroceron.github.io/ai-agent-security-mini-audit/llms-readiness-sample.html
+- Full AI-readable service summary: https://mauroceron.github.io/ai-agent-security-mini-audit/llms-full.txt
 - Sample USD 29 proof note: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-proof-sample.html
 - USD 75 contact funnel QA: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-qa.html
 - Contact funnel sample report: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-funnel-sample-report.html
