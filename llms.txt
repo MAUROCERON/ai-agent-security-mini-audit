@@ -18,6 +18,7 @@ GitHub repository: https://github.com/MAUROCERON/ai-agent-security-mini-audit
 - USD 29 contact form proof check: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-proof.html
 - USD 50 two-form proof pack: https://mauroceron.github.io/ai-agent-security-mini-audit/contact-form-proof.html#two-form-pack
 - Agency form proof check: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-form-proof.html
+- Webflow form handoff QA: https://mauroceron.github.io/ai-agent-security-mini-audit/webflow-form-handoff-qa.html
 - Agency form proof sample: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-form-proof-sample.html
 - Form backend proof check: https://mauroceron.github.io/ai-agent-security-mini-audit/form-backend-proof-check.html
 - LLMs.txt AI readiness quickfix: https://mauroceron.github.io/ai-agent-security-mini-audit/llms-readiness-quickfix.html
@@ -52,6 +53,8 @@ The USD 29 contact form proof check is the lower-friction first paid step. It ch
 The USD 50 two-form proof pack checks two public forms for the same brand, launch or client handoff. It lowers the cost to USD 25 per form and is the best-value path when a buyer has both a contact form and a demo, audit, callback or newsletter form. It includes one short proof note per form, developer-ready ticket text for actionable failures, and one first-fix retest reply within 7 days for one affected form.
 
 The agency form proof check is the same USD 29 one-form proof check and USD 50 two-form offer positioned for Webflow, WordPress, no-code, AI automation, CRM, booking and lead-routing agencies. It is meant as a pre-handoff QA or small resellable line item before client launch.
+
+The Webflow form handoff QA is the same USD 29 one-form and USD 50 two-form proof-check offer written specifically for Webflow, Framer, WordPress and no-code agencies. It focuses on Webflow Forms, embedded form backends, visible success states, analytics-only false positives, endpoint/status evidence and client-safe handoff notes.
 
 The agency form proof sample shows the expected handoff-ready deliverable shape: compact verdict, evidence table, developer ticket text, client-safe note and buy-more verdict.
 
