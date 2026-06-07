@@ -50,6 +50,12 @@ URL: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-form-proof
 
 This is the same USD 29 one-form proof check and USD 50 two-form offer positioned for Webflow, WordPress, no-code, AI automation, CRM, booking, and lead-routing agencies. It is meant as a pre-handoff QA or small resellable line item before client launch.
 
+### Webflow Form Handoff QA
+
+URL: https://mauroceron.github.io/ai-agent-security-mini-audit/webflow-form-handoff-qa.html
+
+This is the same USD 29 one-form proof check and USD 50 two-form offer written specifically for Webflow, Framer, WordPress, and no-code agencies. It checks public launch forms from the outside, captures visible submit state, notes Webflow Forms or embedded backend evidence when available, flags analytics-only false positives, and returns a client-safe handoff note.
+
 Sample deliverable:
 https://mauroceron.github.io/ai-agent-security-mini-audit/agency-form-proof-sample.html
 
