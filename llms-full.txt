@@ -48,7 +48,7 @@ This is the same proof-check offer positioned for form backend, form builder, le
 
 URL: https://mauroceron.github.io/ai-agent-security-mini-audit/agency-form-proof.html
 
-This is the same USD 29 one-form proof check and USD 50 two-form offer positioned for Webflow, WordPress, no-code, AI automation, CRM, booking, and lead-routing agencies. It is meant as a pre-handoff QA or small resellable line item before client launch.
+This is a USD 19 starter proof note, USD 29 one-form proof check, and USD 50 two-form offer positioned for Webflow, WordPress, no-code, AI automation, CRM, booking, and lead-routing agencies. The USD 19 starter covers one public form's visible submit result, friction notes, and buy-more verdict. USD 29 adds safe endpoint/status notes when exposed and developer-ready issue text. USD 50 covers two public forms and one first-fix retest. It is meant as a pre-handoff QA or small resellable line item before client launch.
 
 ### Webflow Form Handoff QA
 
